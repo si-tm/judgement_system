@@ -1,0 +1,2 @@
+docker: Error response from daemon: invalid mount config for type "bind": bind source path does not exist: /clusterhome/mhyakuzuka/oxdna_ked/seqG/test_g8_200000_1/.
+See 'docker run --help'.

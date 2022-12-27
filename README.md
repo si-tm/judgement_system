@@ -2,9 +2,15 @@
 
 ### step
 1. prepare input data
+    - 1040 seq 
+    - temperature
+    - steps
+    - 
 2. make train data and test data from input data
 3. extract variables from input data
-4. make two layer network
+4. make 4 layers network
+    - 1500*50, 50*10, 10*1
+    
 5. leaning weight
     - select train data
     - calcurate gradient

@@ -1,0 +1,51 @@
+##############################
+####  PROGRAM PARAMETERS  ####
+##############################
+sim_type = VMMC
+backend = CPU
+#debug = 1
+seed = 42
+
+##############################
+####    SIM PARAMETERS    ####
+##############################
+; steps = 10
+steps = 200000
+
+list_type = cells
+ensemble = nvt
+delta_translation = 0.22
+delta_rotation = 0.22
+
+T = 334 K
+dt = 0.003
+verlet_skin = 0.5
+
+##############################
+####    INPUT / OUTPUT    ####
+##############################
+topology = try_my_sample/generated_seqH-GA100000-0.50_final_20200905161447.top
+conf_file = try_my_sample/generated_seqH-GA100000-0.50_final_20200905161447.dat
+lastconf_file = last_conf_trap_seqH-GA100000-0.50_final_20200905161447.dat
+trajectory_file = trajectory_trap_seqH-GA100000-0.50_final_20200905161447.dat
+refresh_vel = 1
+log_file = log_trap_seqH-GA100000-0.50_final_20200905161447.dat
+no_stdout_energy = 1
+restart_step_counter = 1
+energy_file = energy_trap_seqH-GA100000-0.50_final_20200905161447.dat
+print_conf_interval = 100000000
+print_energy_every = 100000
+time_scale = linear
+external_forces = 0
+external_forces_file = try_my_sample/forces_seqH-GA100000-0.50_final_20200905161447.dat
+
+data_output_1 = {
+	print_every = 10000
+	name = hb_energy_trap_seqH-GA100000-0.50_final_20200905161447.dat
+	col_1 = {
+		type = step
+	}
+	col_2 = {
+		type = hb_energy
+	}
+}

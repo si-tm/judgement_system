@@ -1,0 +1,283 @@
+expr: syntax error: unexpected argument 'run_samples/'
+
+seqG-GA100000-0.50_final_20200906050019
+try_my_sample/seqG-GA100000-0.50_final_20200906050019.dat
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## Found single strand of 20 bases
+## nstrands, nnucl =  40 800
+## Adding single strand of 20 bases
+##  done line 1 / 40, now at 20/800
+## Adding single strand of 20 bases
+##  done line 2 / 40, now at 40/800
+## Adding single strand of 20 bases
+##  done line 3 / 40, now at 60/800
+## Adding single strand of 20 bases
+##  done line 4 / 40, now at 80/800
+## Adding single strand of 20 bases
+##  done line 5 / 40, now at 100/800
+## Adding single strand of 20 bases
+##  done line 6 / 40, now at 120/800
+## Adding single strand of 20 bases
+##  done line 7 / 40, now at 140/800
+## Adding single strand of 20 bases
+##  done line 8 / 40, now at 160/800
+## Adding single strand of 20 bases
+##  done line 9 / 40, now at 180/800
+## Adding single strand of 20 bases
+##  done line 10 / 40, now at 200/800
+## Adding single strand of 20 bases
+##  done line 11 / 40, now at 220/800
+## Adding single strand of 20 bases
+##  done line 12 / 40, now at 240/800
+## Adding single strand of 20 bases
+##  done line 13 / 40, now at 260/800
+## Adding single strand of 20 bases
+##  done line 14 / 40, now at 280/800
+## Adding single strand of 20 bases
+##  done line 15 / 40, now at 300/800
+## Adding single strand of 20 bases
+##  done line 16 / 40, now at 320/800
+## Adding single strand of 20 bases
+##  done line 17 / 40, now at 340/800
+## Adding single strand of 20 bases
+##  done line 18 / 40, now at 360/800
+## Adding single strand of 20 bases
+##  done line 19 / 40, now at 380/800
+## Adding single strand of 20 bases
+##  done line 20 / 40, now at 400/800
+## Adding single strand of 20 bases
+##  done line 21 / 40, now at 420/800
+## Adding single strand of 20 bases
+##  done line 22 / 40, now at 440/800
+## Adding single strand of 20 bases
+##  done line 23 / 40, now at 460/800
+## Adding single strand of 20 bases
+##  done line 24 / 40, now at 480/800
+## Adding single strand of 20 bases
+##  done line 25 / 40, now at 500/800
+## Adding single strand of 20 bases
+##  done line 26 / 40, now at 520/800
+## Adding single strand of 20 bases
+##  done line 27 / 40, now at 540/800
+## Adding single strand of 20 bases
+##  done line 28 / 40, now at 560/800
+## Adding single strand of 20 bases
+##  done line 29 / 40, now at 580/800
+## Adding single strand of 20 bases
+##  done line 30 / 40, now at 600/800
+## Adding single strand of 20 bases
+##  done line 31 / 40, now at 620/800
+## Adding single strand of 20 bases
+##  done line 32 / 40, now at 640/800
+## Adding single strand of 20 bases
+##  done line 33 / 40, now at 660/800
+## Adding single strand of 20 bases
+##  done line 34 / 40, now at 680/800
+## Adding single strand of 20 bases
+##  done line 35 / 40, now at 700/800
+## Adding single strand of 20 bases
+##  done line 36 / 40, now at 720/800
+## Adding single strand of 20 bases
+##  done line 37 / 40, now at 740/800
+## Adding single strand of 20 bases
+##  done line 38 / 40, now at 760/800
+## Adding single strand of 20 bases
+##  done line 39 / 40, now at 780/800
+## Adding single strand of 20 bases
+##  done line 40 / 40, now at 800/800
+## ALL DONE. just generated 'generated.dat' and 'generated.top'
+try_my_sample/input_seqG-GA100000-0.50_final_20200906050019 fixed
+try_my_sample/input_seq_dep_seqG-GA100000-0.50_final_20200906050019 fixed
+sed: -e expression #1, char 116: unterminated `s' command
+try_my_sample/input_trap_seqG-GA100000-0.50_final_20200906050019 fixed
+tmp2.sh
+#!/usr/bin/bash
+RUN_FILE="run_samples/make_samples_ked_2.sh"
+echo `expr ls run_samples/`
+chmod 755 $RUN_FILE
+SEQ_FILE="seqG-GA100000-0.50_final_20200906050019.dat"
+./$RUN_FILE $SEQ_FILE
+input_seq_dep
+##############################
+####  PROGRAM PARAMETERS  ####
+##############################
+sim_type = VMMC
+backend = CPU
+#debug = 1
+seed = 42
+
+##############################
+####    SIM PARAMETERS    ####
+##############################
+; steps = 10
+steps = 200000
+newtonian_steps = 103
+diff_coeff = 2.50
+thermostat = john
+
+list_type = cells
+ensemble = nvt
+delta_translation = 0.22
+delta_rotation = 0.22
+
+use_average_seq = 0
+; seq_dep_file = ../../oxDNA1_sequence_dependent_parameters.txt
+; seq_dep_file = ../oxDNA1_sequence_dependent_parameters.txt
+seq_dep_file = oxDNA1_sequence_dependent_parameters.txt
+
+T = 334 K
+dt = 0.003
+verlet_skin = 0.5
+
+##############################
+####    INPUT / OUTPUT    ####
+##############################
+topology = try_my_sample/generated_seqG-GA100000-0.50_final_20200906050019.top
+conf_file = try_my_sample/generated_seqG-GA100000-0.50_final_20200906050019.dat
+lastconf_file = last_conf_seq_dep_seqG-GA100000-0.50_final_20200906050019.dat
+trajectory_file = trajectory_seq_dep_seqG-GA100000-0.50_final_20200906050019.dat
+refresh_vel = 1
+log_file = log_seq_dep_seqG-GA100000-0.50_final_20200906050019.dat
+no_stdout_energy = 1
+restart_step_counter = 1
+energy_file = energy_seq_dep_seqG-GA100000-0.50_final_20200906050019.dat
+print_conf_interval = 100000000
+print_energy_every = 100000
+time_scale = linear
+external_forces = 0
+
+data_output_1 = {
+	print_every = 10000
+	name = hb_energy_seq_dep_seqG-GA100000-0.50_final_20200906050019.dat
+	col_1 = {
+		type = step
+	}
+	col_2 = {
+		type = hb_energy
+	}
+}
+input seq_dep
+cat: try_my_sample/input_seq_dep_seqA-GA100000-0.80_final_20200904210434: No such file or directory
+forces_seqG-GA100000-0.50_final_20200906050019.dat
+generated_seqG-GA100000-0.50_final_20200906050019.dat
+generated_seqG-GA100000-0.50_final_20200906050019.top
+input_seqG-GA100000-0.50_final_20200906050019
+input_seq_dep_seqG-GA100000-0.50_final_20200906050019
+input_trap_seqG-GA100000-0.50_final_20200906050019
+run.sh
+run_A.sh
+seqG-GA100000-0.50_final_20200906050019.dat
+Starting VMMC simulation with the sequence-averaged version of the model
+try_my_sample/input_seqG-GA100000-0.50_final_20200906050019
+WARNING: Overwriting key `steps' (`10' to `200000')
+Starting VMMC simulation with the sequence-dependent version of the model
+try_my_sample/input_seq_dep_seqG-GA100000-0.50_final_20200906050019
+##############################
+####  PROGRAM PARAMETERS  ####
+##############################
+sim_type = VMMC
+backend = CPU
+#debug = 1
+seed = 42
+
+##############################
+####    SIM PARAMETERS    ####
+##############################
+; steps = 10
+steps = 200000
+newtonian_steps = 103
+diff_coeff = 2.50
+thermostat = john
+
+list_type = cells
+ensemble = nvt
+delta_translation = 0.22
+delta_rotation = 0.22
+
+use_average_seq = 0
+; seq_dep_file = ../../oxDNA1_sequence_dependent_parameters.txt
+; seq_dep_file = ../oxDNA1_sequence_dependent_parameters.txt
+seq_dep_file = oxDNA1_sequence_dependent_parameters.txt
+
+T = 334 K
+dt = 0.003
+verlet_skin = 0.5
+
+##############################
+####    INPUT / OUTPUT    ####
+##############################
+topology = try_my_sample/generated_seqG-GA100000-0.50_final_20200906050019.top
+conf_file = try_my_sample/generated_seqG-GA100000-0.50_final_20200906050019.dat
+lastconf_file = last_conf_seq_dep_seqG-GA100000-0.50_final_20200906050019.dat
+trajectory_file = trajectory_seq_dep_seqG-GA100000-0.50_final_20200906050019.dat
+refresh_vel = 1
+log_file = log_seq_dep_seqG-GA100000-0.50_final_20200906050019.dat
+no_stdout_energy = 1
+restart_step_counter = 1
+energy_file = energy_seq_dep_seqG-GA100000-0.50_final_20200906050019.dat
+print_conf_interval = 100000000
+print_energy_every = 100000
+time_scale = linear
+external_forces = 0
+
+data_output_1 = {
+	print_every = 10000
+	name = hb_energy_seq_dep_seqG-GA100000-0.50_final_20200906050019.dat
+	col_1 = {
+		type = step
+	}
+	col_2 = {
+		type = hb_energy
+	}
+}
+WARNING: Overwriting key `steps' (`10' to `200000')
+WARNING: Overwriting key `seq_dep_file' (`../../oxDNA1_sequence_dependent_parameters.txt' to `../oxDNA1_sequence_dependent_parameters.txt')
+WARNING: Overwriting key `seq_dep_file' (`../oxDNA1_sequence_dependent_parameters.txt' to `oxDNA1_sequence_dependent_parameters.txt')
+Starting VMMC simulation with the sequence-averaged version of the model and traps acting between nucleotides (see hairpin_forces.dat for details of the traps)
+try_my_sample/input_trap_seqG-GA100000-0.50_final_20200906050019
+WARNING: Overwriting key `steps' (`10' to `200000')
+mkdir: cannot create directory 'results/': File exists
+mv: cannot stat 'try_my_samples/*.dat': No such file or directory
+mv: cannot stat 'seqG-GA100000-0.50_final_20200906050019.dat': No such file or directory
+forces_seqG-GA100000-0.50_final_20200906050019.dat
+run.sh
+run_A.sh
+seqG-GA100000-0.50_final_20200906050019.dat
