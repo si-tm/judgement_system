@@ -3,34 +3,7 @@ import matplotlib.pylab as plt
 import csv
 # import pickle # pickleshare  0.7.5
 import glob
-
-# def load_file():
-#     filename = '../data/sequences3.csv'
-#     f2 = open("../data/sequence4.csv", "w")
-#     with open(filename, encoding='utf8', newline='') as f:
-#         csvreader = csv.reader(f)
-#         for row in csvreader:
-#             print(row)
-#             for seq in row:
-#                 if seq != "":
-#                     print(seq)
-#                     f2.write(seq + "\n")
-    
-#     f2.close()
-
-# def make_dic():
-#     seq = {}
-#     f = open("../data/sequences4.csv", "r")
-#     csvreader = csv.reader(f)
-#     for s in csvreader:
-#         print(s)
-#         seq[s[0]] = 0
-
-# def load_seq():
-#     f = open("../input/sequences/seqA/seqA-GA100000-0.80_final_20200904131038.dat")
-#     for seq in f:
-#         print(seq[:-1]) #eliminate /n
-#     f.close()
+from common import get_target_file as gf
 
 class input_seq_data:
     def __init__(self, seq_file_name):
@@ -41,6 +14,9 @@ class input_seq_data:
         for s in csvreader:
             # print(s)
             self.seq[s[0]] = 0
+
+    def get_seq(self):
+        return self.seq
     
     def input_seq_num(self):
         f = open(self.seq_file_name)
@@ -62,13 +38,16 @@ class input_seq_data:
             return True
         return False
 
+def get_seq_data(target_dir):
+    seq_file = gf.get_seq(target_dir)
+    seq_dic_data = input_seq_data(seq_file)
+    return seq_dic_data.seq
+
+
 def main():
-    # seq_a_1
-    seq_a_1 = input_seq_data("../input/sequences/seqA/seqA-GA100000-0.80_final_20200904131038.dat")
-    seq_a_1.input_seq_num()
-    seq_a_1.verification()
-    # get all seq file
-    # seq_files = glob.glob("../input/sequences/*/*")
+    dic = get_seq_data("../input/results/oxdna_ked/seqA/A2/test_a2_200000_2")
+    for d in dic:
+        print(d, dic[d])
 
 if __name__ == '__main__':
   main()

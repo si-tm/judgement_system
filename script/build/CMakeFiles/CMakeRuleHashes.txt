@@ -1,0 +1,7 @@
+# Hashes of file build rules.
+542b3343fe50a39dab9488cf2359afb9 CMakeFiles/test_quick
+7e3b52c4f768c607f36761773f6a5796 CMakeFiles/test_run
+d6281a22c8672c1a1340ad8c55ab4163 contrib/randisi/CMakeFiles/randisi
+7a621d5486d36a1b5896af7d2a6af2b7 contrib/romano/CMakeFiles/romano
+d55b01b9a1938d7683a0ec7967ff3a7b contrib/rovigatti/CMakeFiles/rovigatti
+5bdaf20863403581f49712ba889f79e1 contrib/tostiguerra/CMakeFiles/tostiguerra
