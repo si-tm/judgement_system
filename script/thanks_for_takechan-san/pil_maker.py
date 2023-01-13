@@ -113,7 +113,7 @@ def trash_pils():
 
 
 def make_pil_for_all():
-    lst = glob.glob("../results/peppercorn*/final_*.p")
+    lst = glob.glob("../../input/p/*/final_*.p")
 
     for path in lst:
         res = read_pickle(path)

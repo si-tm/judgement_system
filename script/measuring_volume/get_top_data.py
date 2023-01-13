@@ -83,6 +83,8 @@ def get_connection_strands(bonds_name, strands2particle, particle2strand):
 def get_particle_strands_data(target_dir):
     strands2particle, particle2strand = make_initial_strands_data(target_dir)
     # bondsファイルを取得する
+    print(target_dir)
+    print(gtf.get_bonds(target_dir))
     strands2particle, particle2strand = get_connection_strands(gtf.get_bonds(target_dir), strands2particle, particle2strand)
     return strands2particle, particle2strand 
 

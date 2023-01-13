@@ -26,15 +26,15 @@ verlet_skin = 0.5
 ##############################
 ####    INPUT / OUTPUT    ####
 ##############################
-topology = ../../input/results/oxdna_ked/seqA/A4/test_a4_200000_1/generated_seqA-GA100000-0.80_final_20200904182642.top
-conf_file = ../../input/results/oxdna_ked/seqA/A4/test_a4_200000_1/generated_seqA-GA100000-0.80_final_20200904182642.dat
-lastconf_file = ../../input/results/oxdna_ked/seqA/A4/test_a4_200000_1/last_conf_seqA-GA100000-0.80_final_20200904182642.dat
-trajectory_file = ../../input/results/oxdna_ked/seqA/A4/test_a4_200000_1/trajectory_seqA-GA100000-0.80_final_20200904182642.dat
+topology = ../input/results/oxdna_ked/seqA/A4/test_a4_200000_1/generated_seqA-GA100000-0.80_final_20200904182642.top
+conf_file = ../input/results/oxdna_ked/seqA/A4/test_a4_200000_1/generated_seqA-GA100000-0.80_final_20200904182642.dat
+lastconf_file = ../input/results/oxdna_ked/seqA/A4/test_a4_200000_1/last_conf_seqA-GA100000-0.80_final_20200904182642.dat
+trajectory_file = ../input/results/oxdna_ked/seqA/A4/test_a4_200000_1/trajectory_seqA-GA100000-0.80_final_20200904182642.dat
 refresh_vel = 1
-log_file = ../../input/results/oxdna_ked/seqA/A4/test_a4_200000_1/log_seqA-GA100000-0.80_final_20200904182642.dat
+log_file = ../input/results/oxdna_ked/seqA/A4/test_a4_200000_1/log_seqA-GA100000-0.80_final_20200904182642.dat
 no_stdout_energy = 1
 restart_step_counter = 1
-energy_file = ../../input/results/oxdna_ked/seqA/A4/test_a4_200000_1/energy_seqA-GA100000-0.80_final_20200904182642.dat
+energy_file = ../input/results/oxdna_ked/seqA/A4/test_a4_200000_1/energy_seqA-GA100000-0.80_final_20200904182642.dat
 print_conf_interval = 100000000
 print_energy_every = 100000
 time_scale = linear
@@ -42,7 +42,7 @@ external_forces = 0
 
 data_output_1 = {
 	print_every = 10000
-	name = ../../input/results/oxdna_ked/seqA/A4/test_a4_200000_1/hb_energy_seqA-GA100000-0.80_final_20200904182642.dat
+	name = ../input/results/oxdna_ked/seqA/A4/test_a4_200000_1/hb_energy_seqA-GA100000-0.80_final_20200904182642.dat
 	col_1 = {
 		type = step
 	}

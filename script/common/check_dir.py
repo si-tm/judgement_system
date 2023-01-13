@@ -1,11 +1,12 @@
 # import numpy as np
 # import matplotlib.pylab as plt
-import get_target_file as gtf
 import sys
+sys.path.append('common')
+import get_target_file as gtf
 
 def included_full_files(target_dir):
     fd = gtf.file_dic(target_dir)
-    return "last_conf" in fd
+    return "last_conf" in fd and "input" in fd
 
 def check_file(file_name):
     file = open(file_name, "r")
@@ -17,7 +18,7 @@ def new_input(target_dir):
     fd = gtf.file_dic(target_dir)
 
     new_input_file_name = "/".join(fd["input"].split("/")[:-1]) + "/new_" + fd["input"].split("/")[-1]
-    print(new_input_file_name + "is created")
+    print(new_input_file_name + " is created")
     new_input_file = open(new_input_file_name, "w")
     input_file = open(fd["input"], "r")
 

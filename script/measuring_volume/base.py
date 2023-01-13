@@ -150,9 +150,11 @@ class Logger(object):
             return
 
         if additional != None and Logger.debug_level == Logger.DEBUG:
-            print(sys.stderr, file="%s: %s (additional info: '%s')" % (Logger.messages[level], msg, additional))
+            # print(sys.stderr, file="%s: %s (additional info: '%s')" % (Logger.messages[level], msg, additional))
+            print(sys.stderr)
         else:
-            print(sys.stderr, file="%s: %s" % (Logger.messages[level], msg))
+            # print(sys.stderr, file="%s: %s" % (Logger.messages[level], msg))
+            print(sys.stderr)
 
     @staticmethod
     def die(msg):

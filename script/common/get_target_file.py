@@ -8,7 +8,10 @@ import sys
 
 # extracting files from directory
 def file_dic(dir_path):
-    files = glob.glob(dir_path + "/*")
+    if dir_path[-1] == "/":
+        files = glob.glob(dir_path + "*")
+    else:
+        files = glob.glob(dir_path + "/*")
 
     # target seq file
     target_c = ""
@@ -23,6 +26,8 @@ def file_dic(dir_path):
         fd[key] = f
         if f[-4:] == ".top":
             fd["topology"] = f
+        if f.split("/")[-1][:4] == "seq" + target_c:
+            fd["seq"] = f
     
     # for f in fd:
     #     print(f)
@@ -48,8 +53,16 @@ def get_top(dir_path):
     d = file_dic(dir_path)
     return d["topology"]
 
+def get_seq(dir_path):
+    d = file_dic(dir_path)
+    # print(d["seq"])
+    return d["seq"]
+
 def get_bonds(dir_path):
-    return dir_path + "/bonds"
+    if dir_path[-1] == "/":
+        return dir_path + "bonds"
+    else:
+        return dir_path + "/bonds"
 
 def test():
     last_conf = get_conf("../../input/results/oxdna_ked/seqA/A3/test_a3_200000_1")
@@ -77,4 +90,5 @@ def main():
         print(top)
 
 if __name__ == '__main__':
-  main()
+#   main()
+  test()
