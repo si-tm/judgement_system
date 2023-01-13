@@ -24,6 +24,7 @@ def get_y():
 def load_y():
     with open("../data/dic/y_1.pkl", "rb") as tf:
         new_dict = pickle.load(tf)
+        return new_dict
 
     print(new_dict)
 

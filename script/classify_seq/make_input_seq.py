@@ -10,10 +10,7 @@ def seq_lst1():
     seq_lst = []
 
     for lst in input_seq_csv:
-        seq = []
-        for l in lst:
-            if l != "":
-                seq.append(l)
+        seq = cs.lst2str(lst)
         seq_lst.append(seq)
 
     return seq_lst
@@ -38,10 +35,7 @@ def seq_lst2():
     seq_lst = []
 
     for lst in input_seq_csv:
-        seq = []
-        for l in lst:
-            if l != "":
-                seq.append(l)
+        seq = cs.lst2str(lst)
         seq_lst.append(seq)
 
     return seq_lst

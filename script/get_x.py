@@ -66,12 +66,14 @@ def get_x2():
 def load_x1():
     with open("../data/dic/x_1_1.pkl", "rb") as tf:
         new_dict = pickle.load(tf)
+        return new_dict
 
     print(new_dict)
 
 def load_x2():
     with open("../data/dic/x_1_2.pkl", "rb") as tf:
         new_dict = pickle.load(tf)
+        return new_dict
 
     print(new_dict)
 
