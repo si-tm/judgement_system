@@ -19,6 +19,22 @@ def get_y():
     
     print(y_dic)
     with open("../data/dic/y_1.pkl", "wb") as tf:
+        peickle.dump(y_dic,tf)
+
+def get_y():
+    # y_dic[dir_name] = mean_val
+    y_dic = {}
+    dirs = lr.load_l1_directory()
+    for d in dirs:
+        print(d)
+        # get bonds 
+        rob.make_bonds(d)
+        # convex_hull
+        volume = cv.convexhull_volume_all_strands(d)
+        y_dic[d] = volume
+    
+    print(y_dic)
+    with open("../data/dic/y_l1_1.pkl", "wb") as tf:
         pickle.dump(y_dic,tf)
 
 def load_y():

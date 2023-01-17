@@ -1,0 +1,253 @@
+expr: syntax error: unexpected argument 'run_samples/'
+
+seqI-random100000-0.85_final_20200904085717
+try_my_sample/seqI-random100000-0.85_final_20200904085717.dat
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 51 bases
+## Found single strand of 49 bases
+## Found single strand of 49 bases
+## Found single strand of 49 bases
+## Found single strand of 49 bases
+## Found single strand of 49 bases
+## Found single strand of 49 bases
+## Found single strand of 49 bases
+## Found single strand of 49 bases
+## Found single strand of 49 bases
+## Found single strand of 49 bases
+## nstrands, nnucl =  30 1510
+## Adding single strand of 51 bases
+##  done line 1 / 30, now at 51/1510
+## Adding single strand of 51 bases
+##  done line 2 / 30, now at 102/1510
+## Adding single strand of 51 bases
+##  done line 3 / 30, now at 153/1510
+## Adding single strand of 51 bases
+##  done line 4 / 30, now at 204/1510
+## Adding single strand of 51 bases
+##  done line 5 / 30, now at 255/1510
+## Adding single strand of 51 bases
+##  done line 6 / 30, now at 306/1510
+## Adding single strand of 51 bases
+##  done line 7 / 30, now at 357/1510
+## Adding single strand of 51 bases
+##  done line 8 / 30, now at 408/1510
+## Adding single strand of 51 bases
+##  done line 9 / 30, now at 459/1510
+## Adding single strand of 51 bases
+##  done line 10 / 30, now at 510/1510
+## Adding single strand of 51 bases
+##  done line 11 / 30, now at 561/1510
+## Adding single strand of 51 bases
+##  done line 12 / 30, now at 612/1510
+## Adding single strand of 51 bases
+##  done line 13 / 30, now at 663/1510
+## Adding single strand of 51 bases
+##  done line 14 / 30, now at 714/1510
+## Adding single strand of 51 bases
+##  done line 15 / 30, now at 765/1510
+## Adding single strand of 51 bases
+##  done line 16 / 30, now at 816/1510
+## Adding single strand of 51 bases
+##  done line 17 / 30, now at 867/1510
+## Adding single strand of 51 bases
+##  done line 18 / 30, now at 918/1510
+## Adding single strand of 51 bases
+##  done line 19 / 30, now at 969/1510
+## Adding single strand of 51 bases
+##  done line 20 / 30, now at 1020/1510
+## Adding single strand of 49 bases
+##  done line 21 / 30, now at 1069/1510
+## Adding single strand of 49 bases
+##  done line 22 / 30, now at 1118/1510
+## Adding single strand of 49 bases
+##  done line 23 / 30, now at 1167/1510
+## Adding single strand of 49 bases
+##  done line 24 / 30, now at 1216/1510
+## Adding single strand of 49 bases
+##  done line 25 / 30, now at 1265/1510
+## Adding single strand of 49 bases
+##  done line 26 / 30, now at 1314/1510
+## Adding single strand of 49 bases
+##  done line 27 / 30, now at 1363/1510
+## Adding single strand of 49 bases
+##  done line 28 / 30, now at 1412/1510
+## Adding single strand of 49 bases
+##  done line 29 / 30, now at 1461/1510
+## Adding single strand of 49 bases
+##  done line 30 / 30, now at 1510/1510
+## ALL DONE. just generated 'generated.dat' and 'generated.top'
+try_my_sample/input_seqI-random100000-0.85_final_20200904085717 fixed
+try_my_sample/input_seq_dep_seqI-random100000-0.85_final_20200904085717 fixed
+sed: -e expression #1, char 116: unterminated `s' command
+try_my_sample/input_trap_seqI-random100000-0.85_final_20200904085717 fixed
+tmp2.sh
+#!/usr/bin/bash
+RUN_FILE="run_samples/make_samples_ked_2.sh"
+echo `expr ls run_samples/`
+chmod 755 $RUN_FILE
+SEQ_FILE="seqI-random100000-0.85_final_20200904085717.dat"
+./$RUN_FILE $SEQ_FILE
+input_seq_dep
+##############################
+####  PROGRAM PARAMETERS  ####
+##############################
+sim_type = VMMC
+backend = CPU
+#debug = 1
+seed = 42
+
+##############################
+####    SIM PARAMETERS    ####
+##############################
+; steps = 10
+steps = 200000
+newtonian_steps = 103
+diff_coeff = 2.50
+thermostat = john
+
+list_type = cells
+ensemble = nvt
+delta_translation = 0.22
+delta_rotation = 0.22
+
+use_average_seq = 0
+; seq_dep_file = ../../oxDNA1_sequence_dependent_parameters.txt
+; seq_dep_file = ../oxDNA1_sequence_dependent_parameters.txt
+seq_dep_file = oxDNA1_sequence_dependent_parameters.txt
+
+T = 334 K
+dt = 0.003
+verlet_skin = 0.5
+
+##############################
+####    INPUT / OUTPUT    ####
+##############################
+topology = try_my_sample/generated_seqI-random100000-0.85_final_20200904085717.top
+conf_file = try_my_sample/generated_seqI-random100000-0.85_final_20200904085717.dat
+lastconf_file = last_conf_seq_dep_seqI-random100000-0.85_final_20200904085717.dat
+trajectory_file = trajectory_seq_dep_seqI-random100000-0.85_final_20200904085717.dat
+refresh_vel = 1
+log_file = log_seq_dep_seqI-random100000-0.85_final_20200904085717.dat
+no_stdout_energy = 1
+restart_step_counter = 1
+energy_file = energy_seq_dep_seqI-random100000-0.85_final_20200904085717.dat
+print_conf_interval = 100000000
+print_energy_every = 100000
+time_scale = linear
+external_forces = 0
+
+data_output_1 = {
+	print_every = 10000
+	name = hb_energy_seq_dep_seqI-random100000-0.85_final_20200904085717.dat
+	col_1 = {
+		type = step
+	}
+	col_2 = {
+		type = hb_energy
+	}
+}
+input seq_dep
+cat: try_my_sample/input_seq_dep_seqA-GA100000-0.80_final_20200904210434: No such file or directory
+forces_seqI-random100000-0.85_final_20200904085717.dat
+generated_seqI-random100000-0.85_final_20200904085717.dat
+generated_seqI-random100000-0.85_final_20200904085717.top
+input_seqI-random100000-0.85_final_20200904085717
+input_seq_dep_seqI-random100000-0.85_final_20200904085717
+input_trap_seqI-random100000-0.85_final_20200904085717
+run.sh
+run_A.sh
+seqI-random100000-0.85_final_20200904085717.dat
+Starting VMMC simulation with the sequence-averaged version of the model
+try_my_sample/input_seqI-random100000-0.85_final_20200904085717
+WARNING: Overwriting key `steps' (`10' to `200000')
+Starting VMMC simulation with the sequence-dependent version of the model
+try_my_sample/input_seq_dep_seqI-random100000-0.85_final_20200904085717
+##############################
+####  PROGRAM PARAMETERS  ####
+##############################
+sim_type = VMMC
+backend = CPU
+#debug = 1
+seed = 42
+
+##############################
+####    SIM PARAMETERS    ####
+##############################
+; steps = 10
+steps = 200000
+newtonian_steps = 103
+diff_coeff = 2.50
+thermostat = john
+
+list_type = cells
+ensemble = nvt
+delta_translation = 0.22
+delta_rotation = 0.22
+
+use_average_seq = 0
+; seq_dep_file = ../../oxDNA1_sequence_dependent_parameters.txt
+; seq_dep_file = ../oxDNA1_sequence_dependent_parameters.txt
+seq_dep_file = oxDNA1_sequence_dependent_parameters.txt
+
+T = 334 K
+dt = 0.003
+verlet_skin = 0.5
+
+##############################
+####    INPUT / OUTPUT    ####
+##############################
+topology = try_my_sample/generated_seqI-random100000-0.85_final_20200904085717.top
+conf_file = try_my_sample/generated_seqI-random100000-0.85_final_20200904085717.dat
+lastconf_file = last_conf_seq_dep_seqI-random100000-0.85_final_20200904085717.dat
+trajectory_file = trajectory_seq_dep_seqI-random100000-0.85_final_20200904085717.dat
+refresh_vel = 1
+log_file = log_seq_dep_seqI-random100000-0.85_final_20200904085717.dat
+no_stdout_energy = 1
+restart_step_counter = 1
+energy_file = energy_seq_dep_seqI-random100000-0.85_final_20200904085717.dat
+print_conf_interval = 100000000
+print_energy_every = 100000
+time_scale = linear
+external_forces = 0
+
+data_output_1 = {
+	print_every = 10000
+	name = hb_energy_seq_dep_seqI-random100000-0.85_final_20200904085717.dat
+	col_1 = {
+		type = step
+	}
+	col_2 = {
+		type = hb_energy
+	}
+}
+WARNING: Overwriting key `steps' (`10' to `200000')
+WARNING: Overwriting key `seq_dep_file' (`../../oxDNA1_sequence_dependent_parameters.txt' to `../oxDNA1_sequence_dependent_parameters.txt')
+WARNING: Overwriting key `seq_dep_file' (`../oxDNA1_sequence_dependent_parameters.txt' to `oxDNA1_sequence_dependent_parameters.txt')
+Starting VMMC simulation with the sequence-averaged version of the model and traps acting between nucleotides (see hairpin_forces.dat for details of the traps)
+try_my_sample/input_trap_seqI-random100000-0.85_final_20200904085717
+WARNING: Overwriting key `steps' (`10' to `200000')
+mkdir: cannot create directory 'results/': File exists
+mv: cannot stat 'try_my_samples/*.dat': No such file or directory
+mv: cannot stat 'seqI-random100000-0.85_final_20200904085717.dat': No such file or directory
+forces_seqI-random100000-0.85_final_20200904085717.dat
+run.sh
+run_A.sh
+seqI-random100000-0.85_final_20200904085717.dat

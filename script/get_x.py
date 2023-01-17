@@ -23,10 +23,8 @@ def get_x1():
     dirs = lr.load_directory()
     x_dic = {}
 
-
     x_dic1 = mis.seq_dic1()
     x_dic1_sub = x_dic1
-
 
     for d in dirs:
         structurs = get_target_x(d)
@@ -63,6 +61,27 @@ def get_x2():
     
     return x_dic
 
+def get_x(csv_path, result_path):
+    dirs = lr.load_l1_directory()
+    x_dic = {}
+
+    x_dic_l1 = mis.seq_dic(csv_path)
+    x_dic_l1_sub = x_dic_l1
+
+
+    for d in dirs:
+        structurs = get_target_x(d)
+        for str in structurs:
+            print(cs.lst2str(str))
+            x_dic_l1_sub[cs.lst2str(str)] = 1
+        x_dic[d] = x_dic_l1_sub
+        x_dic_l1_sub =mis.seq_dic(csv_path)
+    
+    with open(result_path, "wb") as tf:
+        pickle.dump(x_dic,tf)
+    
+    return x_dic
+
 def load_x1():
     with open("../data/dic/x_1_1.pkl", "rb") as tf:
         new_dict = pickle.load(tf)
@@ -77,6 +96,13 @@ def load_x2():
 
     print(new_dict)
 
+def load_x(path):
+    with open(path, "rb") as tf:
+        new_dict = pickle.load(tf)
+        print(len(new_dict))
+        return new_dict
+
+
 # def load_x():
 
 def main():
@@ -85,8 +111,21 @@ def main():
     # print(get_x1())
     # get_x1()
     # get_x2()
+    l1_csv_path = "../input/input_seq_L1.csv"
+    l1_result_path = "../data/dic/x_l1_1.pkl"
+    l2_csv_path = "../input/input_seq_L2.csv"
+    l2_result_path = "../data/dic/x_l2_1.pkl"
+    l3_csv_path = "../input/input_seq_L3.csv"
+    l3_result_path = "../data/dic/x_l3_1.pkl"
+    # get_x(l1_csv_path, l1_result_path)
+    # get_x(l2_csv_path, l2_result_path)
+    # get_x(l3_csv_path, l3_result_path)
+
     # load_x1()
-    load_x2()
+    # load_x2()
+    load_x(l1_result_path)
+    load_x(l2_result_path)
+    load_x(l3_result_path)
 
 if __name__ == '__main__':
     main()
