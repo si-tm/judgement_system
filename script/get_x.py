@@ -99,7 +99,7 @@ def load_x2():
 def load_x(path):
     with open(path, "rb") as tf:
         new_dict = pickle.load(tf)
-        print(len(new_dict))
+        print(new_dict)
         return new_dict
 
 
@@ -124,8 +124,8 @@ def main():
     # load_x1()
     # load_x2()
     load_x(l1_result_path)
-    load_x(l2_result_path)
-    load_x(l3_result_path)
+    # load_x(l2_result_path)
+    # load_x(l3_result_path)
 
 if __name__ == '__main__':
     main()
