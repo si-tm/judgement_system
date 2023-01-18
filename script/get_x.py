@@ -61,8 +61,8 @@ def get_x2():
     
     return x_dic
 
-def get_x(csv_path, result_path):
-    dirs = lr.load_l1_directory()
+def get_x(csv_path, result_path, dirs):
+    
     x_dic = {}
 
     x_dic_l1 = mis.seq_dic(csv_path)
@@ -117,9 +117,14 @@ def main():
     l2_result_path = "../data/dic/x_l2_1.pkl"
     l3_csv_path = "../input/input_seq_L3.csv"
     l3_result_path = "../data/dic/x_l3_1.pkl"
-    # get_x(l1_csv_path, l1_result_path)
-    # get_x(l2_csv_path, l2_result_path)
-    # get_x(l3_csv_path, l3_result_path)
+
+    dirs_l1 = lr.load_l1_directory()
+    dirs_l2 = lr.load_l2_directory()
+    dirs_l3 = lr.load_l3_directory()
+
+    get_x(l1_csv_path, l1_result_path, dirs_l1)
+    get_x(l2_csv_path, l2_result_path, dirs_l2)
+    get_x(l3_csv_path, l3_result_path, dirs_l3)
 
     # load_x1()
     # load_x2()

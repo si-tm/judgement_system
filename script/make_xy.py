@@ -49,13 +49,37 @@ def make_xy_l1():
     np.save('../data/npy/x_l1_1.npy',x_l1)
     np.save('../data/npy/y_l1_1.npy',y_l1)
 
+def make_xy(dirs, target_name, seq_csv):
+    dic_x = gx.load_x("../data/dic/x_" + target_name + ".pkl")
+    dic_y = gy.load_y("../data/dic/y_" + target_name + ".pkl")
+    x_lst = mis.seq_lst(seq_csv)
+
+    x = []
+    y = []
+
+    print(len(dic_x))
+    print(len(dic_y))
+
+    for d in dirs:
+        x.append(dic2lst(dic_x[d], x_lst))
+        y.append(dic_y[d])
+    
+    np.save("../data/npy/x_" + target_name + ".npy",x)
+    np.save("../data/npy/y_" + target_name + ".npy",y)
+
 def load_npy(path):
     z = np.load(path) 
     return z
 
 def main():
-    # make_xy_l1()
-    print(load_npy("../data/npy/y_l1_1.npy"))
+    dirs_l2 =  lr.load_l2_directory()
+    seq_csv_path = "../input/input_seq_L2.csv"
+    dirs_l3 =  lr.load_l3_directory()
+    # make_xy(dirs_l2, "l2_1", seq_csv_path)
+    # print(load_npy("../data/npy/y_l2_1.npy"))
+    seq_csv_path = "../input/input_seq_L3.csv"
+    make_xy(dirs_l3, "l3_1", seq_csv_path)
+    print(load_npy("../data/npy/y_l3_1.npy"))
 
 if __name__ == '__main__':
   main()

@@ -119,8 +119,6 @@ def val_name(target_name):
 
 def test():
     x_path, y_path, model_name = val_name("l1_1")
-    x_path = '../data/npy/x_l1_1.npy'
-    y_path = '../data/npy/y_l1_1.npy'
     x_train, x_test, y_train, y_test = load_dataset(x_path, y_path)
     model = build_model(x_train)
     print(model.summary())
@@ -135,5 +133,4 @@ def main():
     test()
 
 if __name__ == '__main__':
-  main()
-  
+    main()
