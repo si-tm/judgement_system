@@ -1,4 +1,4 @@
-# judgement_system
+# system of estimating size of DNA structure 
 
 ### step
 1. prepare input data
