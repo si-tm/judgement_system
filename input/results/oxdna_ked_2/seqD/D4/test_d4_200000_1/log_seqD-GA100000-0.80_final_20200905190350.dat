@@ -11,5 +11,5 @@ INFO: END OF THE ANALYSIS, everything went OK!
 INFO: Aggregated I/O statistics (set debug=1 for file-wise information)
 	  0.000  B written to files
 	 50.333 KB written to stdout/stderr
-	For a total of     1.42 MB/s
+	For a total of     1.96 MB/s
 
