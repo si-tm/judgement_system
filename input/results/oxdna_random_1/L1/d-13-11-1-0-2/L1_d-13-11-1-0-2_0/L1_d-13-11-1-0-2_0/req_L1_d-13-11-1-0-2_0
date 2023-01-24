@@ -1,0 +1,18 @@
+# type_of_l
+type_of_l = L1
+
+# structure
+number_of_types = 5
+s0 = b* a* @initial 1.0 M
+s1 = b b* @initial 1.0 M
+s2 = a a* @initial 1.0 M
+s3 = a a @initial 1.0 M
+s4 = a b @initial 1.0 M
+
+# length
+length a = 10
+length b = 10
+
+# sequence of domains
+domains a = TGTTGCTCCA
+domains b = TGGGCAGAGA

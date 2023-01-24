@@ -1,0 +1,42 @@
+INFO: seeding the RNG with 42
+INFO: Initializing backend 
+INFO: Simulation type: VMMC
+INFO: The generator will try to take into account bonded interactions by choosing distances between bonded neighbours no larger than 2.000000
+INFO: Using 'oxDNA1_sequence_dependent_parameters.txt' as the input for sequence-dependent values
+INFO: Converting temperature from Kelvin (334.000000 K) to simulation units (0.111333)
+INFO: Temperature change detected (new temperature: 60.85 C, 334.00 K), re-initialising the DNA interaction
+WARNING: Overwriting key `name' (`hb_results_soturon/L1/d-5-6/L1_d-5-6_2/energy_seq_dep_L1_d-5-6_2.dat' to `results_soturon/L1/d-5-6/L1_d-5-6_2/hb_energy_seq_dep_L1_d-5-6_2.dat')
+INFO: pid: 992
+INFO: (Cells.cpp) N_cells_side: 10, 10, 10; rcut=1.58377, IS_MC: 1
+INFO: N: 400, N molecules: 20
+WARNING: maxclust < 0, setting it to N = 400
+INFO: Not attempting to preserve topology; max_move_size = 46.6325
+INFO: RELEASE: 
+INFO: GIT COMMIT: 0354e06
+INFO: COMPILED ON: 23/01/23
+INFO: diffusion fixed.. -247.235 -247.235
+INFO: diffusion fixed.. -214.6 -214.6
+
+INFO: Total Running Time: 499.787 s, per step: 2.49894 ms
+INFO: Timings, in seconds, by Timer (total, own, spent in children)
+> SimBackend                        499.787 (100.0%)        0.161 (  0.0%)      499.626 (100.0%)
+***> Rotations+Translations         499.626 (100.0%)      499.626 (100.0%)        0.000 (  0.0%)
+> Lists                               0.000 (  0.0%)        0.000 (  0.0%)        0.000 (  0.0%)
+
+INFO: END OF THE SIMULATION, everything went OK!
+INFO: Aggregated I/O statistics (set debug=1 for file-wise information)
+	341.697 KB written to files
+	  0.000  B written to stdout/stderr
+	For a total of 0.000668 MB/s
+
+
+Please cite these publications for any work that uses the oxDNA simulation package
+- for the code:
+    * P. Šulc et al., J. Chem. Phys. 137, 135101 (2012)
+    * L. Rovigatti et al., J. Comput. Chem. 36, 1 (2015)
+- for the oxDNA model:
+    * T. E. Ouldridge et al., J. Chem. Phys, 134, 085101 (2011)
+- for the oxDNA2 model:
+    * B. E. K. Snodin et al., J. Chem. Phys. 142, 234901 (2015)
+- for the oxRNA model:
+    * P. Šulc et al., J. Chem. Phys. 140, 235102 (2014)
