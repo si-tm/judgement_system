@@ -8,6 +8,10 @@ import sys
 
 # extracting files from directory
 def file_dic(dir_path):
+
+    if "random" in dir_path:
+        return random_file_dic(dir_path)
+
     if dir_path[-1] == "/":
         files = glob.glob(dir_path + "*")
     else:
@@ -32,6 +36,39 @@ def file_dic(dir_path):
     # for f in fd:
     #     print(f)
 
+    return fd
+
+def random_file_dic(dir_path):
+    # print("random")
+    # input/results/oxdna_random_1/L1/d-0-6-7-4/L1_d-0-6-7-4_0/L1_d-0-6-7-4_0/
+    if dir_path[-1] == "/":
+        files = glob.glob(dir_path + "*")
+        dir_path = dir_path[:-1]
+    else:
+        files = glob.glob(dir_path + "/*")
+    
+    # target file
+    target = dir_path.split("/")[-1]
+
+    fd = {}
+
+    for f in files:
+        key = f.split("/")[-1]
+        key = key[:key.find("_" + target)]
+        fd[key] = f
+        if f[-4:] == ".top":
+            fd["topology"] = f
+        if key == "hb":
+            fd["hb_energy"] = f
+        if "seq" in key:
+            fd["seq"] = f
+
+        # if f.split("/")[-1][:4] == "seq" + target_c:
+        #     fd["seq"] = f
+    
+    # for f in fd:
+    #     print(type(fd[f]))
+    
     return fd
 
 def get_conf(dir_path):
@@ -64,10 +101,20 @@ def get_bonds(dir_path):
     else:
         return dir_path + "/bonds"
 
+def get_req(dir_path):
+    d = file_dic(dir_path)
+    # print(d)
+    return d["req"]
+
 def test():
-    last_conf = get_conf("../../input/results/oxdna_ked/seqA/A3/test_a3_200000_1")
-    input = get_input("../../input/results/oxdna_ked/seqA/A3/test_a3_200000_1")
-    top = get_top("../../input/results/oxdna_ked/seqA/A3/test_a3_200000_1")
+    dir_path = "../input/results/oxdna_random_1/L1/d-0-6-7-4/L1_d-0-6-7-4_0/L1_d-0-6-7-4_0/"
+    last_conf = get_conf(dir_path)
+    print(last_conf)
+    req = get_req(dir_path)
+    print(req)
+    # last_conf = get_conf("../../input/results/oxdna_ked/seqA/A3/test_a3_200000_1")
+    # input = get_input("../../input/results/oxdna_ked/seqA/A3/test_a3_200000_1")
+    # top = get_top("../../input/results/oxdna_ked/seqA/A3/test_a3_200000_1")
 
 
 def main():

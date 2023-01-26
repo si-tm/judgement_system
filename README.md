@@ -3,7 +3,16 @@
 ### step
 1. prepare input data
     - pkl
+    ```
+    python get_x.py
+    python get_y.py
+    wow
+    wow
+    ```
     - npy
+    ```
+    python make_xy.py
+    ```
 2. train and save model of neural network
 ```
 $ cd script/
@@ -16,6 +25,8 @@ oxdna results
 input/results/
 ```
 make pkl
+```
+```
 make npy
 make neural network
 

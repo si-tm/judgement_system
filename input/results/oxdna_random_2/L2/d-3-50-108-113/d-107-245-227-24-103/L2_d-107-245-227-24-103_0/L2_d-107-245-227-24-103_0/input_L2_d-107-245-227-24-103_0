@@ -1,0 +1,53 @@
+####  PROGRAM PARAMETERS  ####
+##############################
+sim_type = VMMC
+backend = CPU
+#debug = 1
+seed = 42
+
+##############################
+####    SIM PARAMETERS    ####
+##############################
+; steps = 10
+steps = 200000
+newtonian_steps = 103
+diff_coeff = 2.50
+thermostat = john
+
+list_type = cells
+ensemble = nvt
+delta_translation = 0.22
+delta_rotation = 0.22
+
+T = 334 K
+dt = 0.003
+verlet_skin = 0.5
+
+##############################
+####    INPUT / OUTPUT    ####
+##############################
+topology = results_soturon/L2/d-107-245-227-24-103/L2_d-107-245-227-24-103_0/generated_L2_d-107-245-227-24-103_0.top
+conf_file = results_soturon/L2/d-107-245-227-24-103/L2_d-107-245-227-24-103_0/generated_L2_d-107-245-227-24-103_0.dat
+lastconf_file = results_soturon/L2/d-107-245-227-24-103/L2_d-107-245-227-24-103_0/last_conf_L2_d-107-245-227-24-103_0.dat.dat
+trajectory_file = results_soturon/L2/d-107-245-227-24-103/L2_d-107-245-227-24-103_0/trajectory_L2_d-107-245-227-24-103_0.dat
+refresh_vel = 1
+log_file = results_soturon/L2/d-107-245-227-24-103/L2_d-107-245-227-24-103_0/log_L2_d-107-245-227-24-103_0.dat
+no_stdout_energy = 1
+restart_step_counter = 1
+energy_file = results_soturon/L2/d-107-245-227-24-103/L2_d-107-245-227-24-103_0/energy_L2_d-107-245-227-24-103_0.dat
+;print_conf_interval = 100000000
+print_conf_interval = 100000
+print_energy_every = 100000
+time_scale = linear
+external_forces = 0
+
+data_output_1 = {
+	print_every = 10000
+	name = results_soturon/L2/d-107-245-227-24-103/L2_d-107-245-227-24-103_0/hb_L2_d-107-245-227-24-103_0.dat
+	col_1 = {
+		type = step
+	}
+	col_2 = {
+		type = hb_energy
+	}
+}

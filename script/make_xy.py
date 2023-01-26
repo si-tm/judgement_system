@@ -64,12 +64,57 @@ def make_xy(dirs, target_name, seq_csv):
         x.append(dic2lst(dic_x[d], x_lst))
         y.append(dic_y[d])
     
+    print(x)
+    print(y)
+    
     np.save("../data/npy/x_" + target_name + ".npy",x)
     np.save("../data/npy/y_" + target_name + ".npy",y)
 
 def load_npy(path):
     z = np.load(path) 
     return z
+
+def test():
+    # dirs_random_l1 =  lr.load_random_dir("L1")
+    # seq_csv_path = "../input/input_seq_L1.csv"
+    # make_xy(dirs_random_l1, "random_l1_1", seq_csv_path)
+    # print(load_npy("../data/npy/x_random_l1_1.npy"))
+
+    # dirs_random_l2 =  lr.load_random_dir("L2")
+    # seq_csv_path = "../input/input_seq_L2.csv"
+    # make_xy(dirs_random_l2, "random_l2_1", seq_csv_path)
+    # print(load_npy("../data/npy/x_random_l2_1.npy"))
+
+    # dirs_random_l3 =  lr.load_random_dir("L3")
+    # seq_csv_path = "../input/input_seq_L3.csv"
+    # make_xy(dirs_random_l3, "random_l3_1", seq_csv_path)
+    # print(load_npy("../data/npy/x_random_l3_1.npy"))
+    # dirs_random_l1 =  lr.load_random_dir("L1")
+
+    # dirs_random_l1 =  lr.load_random_dir("L1")
+    # seq_csv_path = "../input/input_seq_L1.csv"
+    # make_xy(dirs_random_l1, "random_l1_2", seq_csv_path)
+    # print(load_npy("../data/npy/x_random_l1_2.npy"))
+    # print(load_npy("../data/npy/y_random_l1_2.npy"))
+
+    # dirs_random_l2 =  lr.load_random_dir("L2")
+    # seq_csv_path = "../input/input_seq_L2.csv"
+    # make_xy(dirs_random_l2, "random_l2_2", seq_csv_path)
+    # print(load_npy("../data/npy/x_random_l2_2.npy"))
+    # print(load_npy("../data/npy/y_random_l2_2.npy"))
+
+    # dirs_random_l3 =  lr.load_random_dir("L3")
+    # seq_csv_path = "../input/input_seq_L3.csv"
+    # make_xy(dirs_random_l3, "random_l3_2", seq_csv_path)
+    # print(load_npy("../data/npy/x_random_l3_2.npy"))
+    # print(load_npy("../data/npy/y_random_l3_2.npy"))
+
+
+    # dirs_random_l1 =  lr.load_random_dir("oxdna_random_3", "L1")
+    # seq_csv_path = "../input/input_seq_L1.csv"
+    # make_xy(dirs_random_l1, "random_l1_3", seq_csv_path)
+    print(len(load_npy("../data/npy/x_random_l1_3.npy")))
+    print(len(load_npy("../data/npy/y_random_l1_3.npy")))
 
 def main():
     dirs_l2 =  lr.load_l2_directory()
@@ -82,4 +127,5 @@ def main():
     print(load_npy("../data/npy/y_l3_1.npy"))
 
 if __name__ == '__main__':
-  main()
+    # main()
+    test()

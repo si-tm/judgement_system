@@ -50,6 +50,8 @@ def get_bonds_data(bonds_name):
             id2 = int(lst[1])
             for index, h in enumerate(header[2:]):
                 # print(id1, id2, h, float(lst[index + 2]))
+                if lst[index + 2] == '-':
+                    continue
                 bonds_dic[((id1, id2), h)] = float(lst[index + 2])
         line += 1
     return bonds_dic

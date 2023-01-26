@@ -117,8 +117,20 @@ def val_name(target_name):
     model_name = "saved_model/" + target_name + "_model"
     return x_path, y_path, model_name 
 
-def test():
-    x_path, y_path, model_name = val_name("l1_1")
+# def test():
+#     x_path, y_path, model_name = val_name("l1_1")
+#     x_train, x_test, y_train, y_test = load_dataset(x_path, y_path)
+#     model = build_model(x_train)
+#     print(model.summary())
+#     test_example(x_train, model)
+#     history = train_model(x_train, y_train, model)
+#     draw_fig_history(history)
+#     plot_history(history)
+#     plot_test(x_test, y_test, model)
+#     model.save(model_name)
+
+def test_random_l():
+    x_path, y_path, model_name = val_name("random_l3_1")
     x_train, x_test, y_train, y_test = load_dataset(x_path, y_path)
     model = build_model(x_train)
     print(model.summary())
@@ -130,7 +142,8 @@ def test():
     model.save(model_name)
 
 def main():
-    test()
+    # test()
+    test_random_l()
 
 if __name__ == '__main__':
     main()

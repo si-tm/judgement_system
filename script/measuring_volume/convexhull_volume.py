@@ -2,12 +2,14 @@ import numpy as np
 import matplotlib.pylab as plt
 import sys
 sys.path.append('../')
+sys.path.append('.')
 sys.path.append('measuring_volume/')
 from common import get_target_file as gtf
 from mpl_toolkits.mplot3d import Axes3D
 import get_top_data as gtd
 import get_conf_data as gcd
 from scipy.spatial import ConvexHull
+import k3d
 
 def get_all_r(target_dir):
     conf_name = gtf.get_conf(target_dir)
@@ -55,6 +57,30 @@ def convexhull_volume(x, y, z):
         points.append(lst)
     hull = ConvexHull(points)
 
+    points = np.array(points)
+
+
+
+    # fig = plt.figure()
+    # ax = fig.add_subplot(111, projection="3d")
+
+    # # Plot defining corner points
+    # ax.plot(points.T[0], points.T[1], points.T[2], "ko")
+    # # ax.plot(x, y, z, "ko")
+
+    # # 12 = 2 * 6 faces are the simplices (2 simplices per square face)
+    # for s in hull.simplices:
+    #     s = np.append(s, s[0])  # Here we cycle back to the first coordinate
+    #     ax.plot(points[s, 0], points[s, 1], points[s, 2], "r-")
+    #     # ax.plot(x, y, z, "r-")
+
+    # # Make axis label
+    # for i in ["x", "y", "z"]:
+    #     eval("ax.set_{:s}label('{:s}')".format(i, i))
+
+    # plt.show()
+
+    
     return hull.volume
     
 def plot(X, Y, Z, target_dir):

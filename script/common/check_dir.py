@@ -4,6 +4,12 @@ import sys
 sys.path.append('common')
 import get_target_file as gtf
 
+def is_random(target_dir):
+    if "random" in target_dir:
+        return True
+    else:
+        return False
+
 def included_full_files(target_dir):
     fd = gtf.file_dic(target_dir)
     return "last_conf" in fd and "input" in fd
