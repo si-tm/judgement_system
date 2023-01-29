@@ -121,9 +121,9 @@ def test():
     get_target_x(target_dir)
 
 def make_l():
-    l1_csv_path = "../input/input_seq_L1.csv"
-    l1_result_path = "../data/dic/x_random_l1_3.pkl"
-    dirs_l1 = lr.load_random_dir("oxdna_random_3", "L1")
+    l1_csv_path = "../input/input_seq_L3.csv"
+    l1_result_path = "../data/dic/x_random_l3_4.pkl"
+    dirs_l1 = lr.load_random_dir("oxdna_random_4", "L3")
     # print(dirs_l1)
     get_x(l1_csv_path, l1_result_path, dirs_l1)
     load_x(l1_result_path)

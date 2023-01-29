@@ -1,0 +1,27 @@
+# type_of_l
+type_of_l = L3
+
+# structure
+number_of_types = 6
+s0 = e* e a* @initial 1.0 M
+s1 = c e* a* @initial 1.0 M
+s2 = a* f b @initial 1.0 M
+s3 = e* d b @initial 1.0 M
+s4 = e* f b* @initial 1.0 M
+s5 = a* f f @initial 1.0 M
+
+# length
+length a = 17
+length b = 17
+length c = 17
+length d = 15
+length e = 17
+length f = 17
+
+# sequence of domains
+domains a = TACATTTAGTTAACTCC
+domains b = CACTAAACTATTTCGTT
+domains c = GGAACTGCTGTAGCTGA
+domains d = TCATAGTAATCCGTA
+domains e = AGGTGGTTCGGCTAAGC
+domains f = GATTCCTATAGGCCACT

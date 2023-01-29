@@ -60,14 +60,18 @@ def random_file_dic(dir_path):
             fd["topology"] = f
         if key == "hb":
             fd["hb_energy"] = f
-        if "seq" in key:
+        if "seq_req" in key:
             fd["seq"] = f
+        if "req_L" in key:
+            fd["req"] = f
+        # if "seq" in key:
+        #     fd["seq"] = f
 
         # if f.split("/")[-1][:4] == "seq" + target_c:
         #     fd["seq"] = f
     
-    # for f in fd:
-    #     print(type(fd[f]))
+    for f in fd:
+        print(f, fd[f])
     
     return fd
 

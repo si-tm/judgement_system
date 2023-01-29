@@ -87,8 +87,8 @@ def load_y(path):
         return new_dict
 
 def test():
-    dirs_l1 = lr.load_random_dir("oxdna_random_3", "L1")
-    y_l1_path = "../data/dic/y_random_l1_3.pkl"
+    dirs_l1 = lr.load_random_dir("oxdna_random_4", "L3")
+    y_l1_path = "../data/dic/y_random_l3_4.pkl"
     # dirs_l2 = lr.load_random_dir("oxdna_random_3","L2")
     # y_l2_path = "../data/dic/y_random_l2_2.pkl"
     # dirs_l3 = lr.load_random_dir("oxdna_random_3","L3")

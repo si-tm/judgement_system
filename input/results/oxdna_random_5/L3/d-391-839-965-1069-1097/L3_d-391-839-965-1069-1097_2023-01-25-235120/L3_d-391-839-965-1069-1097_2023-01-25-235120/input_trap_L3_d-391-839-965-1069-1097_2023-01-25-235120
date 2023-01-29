@@ -1,0 +1,53 @@
+##############################
+####  PROGRAM PARAMETERS  ####
+##############################
+sim_type = VMMC
+backend = CPU
+#debug = 1
+seed = 42
+
+##############################
+####    SIM PARAMETERS    ####
+##############################
+; steps = 10
+steps = 200000
+
+list_type = cells
+ensemble = nvt
+delta_translation = 0.22
+delta_rotation = 0.22
+
+T = 334 K
+dt = 0.003
+verlet_skin = 0.5
+
+##############################
+####    INPUT / OUTPUT    ####
+##############################
+topology = results_soturon/L3/d-391-839-965-1069-1097/L3_d-391-839-965-1069-1097_2023-01-25-235120/generated_L3_d-391-839-965-1069-1097_2023-01-25-235120.top
+conf_file = results_soturon/L3/d-391-839-965-1069-1097/L3_d-391-839-965-1069-1097_2023-01-25-235120/generated_L3_d-391-839-965-1069-1097_2023-01-25-235120.dat
+lastconf_file = results_soturon/L3/d-391-839-965-1069-1097/L3_d-391-839-965-1069-1097_2023-01-25-235120/last_conf_trap_L3_d-391-839-965-1069-1097_2023-01-25-235120.dat
+trajectory_file = results_soturon/L3/d-391-839-965-1069-1097/L3_d-391-839-965-1069-1097_2023-01-25-235120/trajectory_trap_L3_d-391-839-965-1069-1097_2023-01-25-235120.dat
+refresh_vel = 1
+log_file = results_soturon/L3/d-391-839-965-1069-1097/L3_d-391-839-965-1069-1097_2023-01-25-235120/log_trap_L3_d-391-839-965-1069-1097_2023-01-25-235120.dat
+no_stdout_energy = 1
+restart_step_counter = 1
+energy_file = results_soturon/L3/d-391-839-965-1069-1097/L3_d-391-839-965-1069-1097_2023-01-25-235120/energy_trap_L3_d-391-839-965-1069-1097_2023-01-25-235120.dat
+;print_conf_interval = 100000000
+print_conf_interval = 100000
+print_energy_every = 100000
+time_scale = linear
+external_forces = 0
+external_forces_file = results_soturon/L3/d-391-839-965-1069-1097/L3_d-391-839-965-1069-1097_2023-01-25-235120/forces_L3_d-391-839-965-1069-1097_2023-01-25-235120.dat
+
+data_output_1 = {
+	print_every = 10000
+	; name = hb_results_soturon/L3/d-391-839-965-1069-1097/L3_d-391-839-965-1069-1097_2023-01-25-235120/energy_trap_L3_d-391-839-965-1069-1097_2023-01-25-235120.dat
+	name = results_soturon/L3/d-391-839-965-1069-1097/L3_d-391-839-965-1069-1097_2023-01-25-235120/hb_energy_trap_L3_d-391-839-965-1069-1097_2023-01-25-235120.dat
+	col_1 = {
+		type = step
+	}
+	col_2 = {
+		type = hb_energy
+	}
+}
