@@ -116,23 +116,23 @@ def test():
     # print(len(load_npy("../data/npy/x_random_l1_3.npy")))
     # print(len(load_npy("../data/npy/y_random_l1_3.npy")))
 
-    # dirs_random_l1 =  lr.load_random_dir("oxdna_random_4", "L1")
+    # dirs_random_l1 =  lr.load_random_dir("oxdna_random_5", "L1")
     # seq_csv_path = "../input/input_seq_L1.csv"
-    # make_xy(dirs_random_l1, "random_l1_4", seq_csv_path)
-    # print(len(load_npy("../data/npy/x_random_l1_4.npy")))
-    # print(len(load_npy("../data/npy/y_random_l1_4.npy")))
+    # make_xy(dirs_random_l1, "random_l1_5", seq_csv_path)
+    # print(len(load_npy("../data/npy/x_random_l1_5.npy")))
+    # print(len(load_npy("../data/npy/y_random_l1_5.npy")))
 
-    # dirs_random_l2 =  lr.load_random_dir("oxdna_random_4", "L2")
+    # dirs_random_l2 =  lr.load_random_dir("oxdna_random_5", "L2")
     # seq_csv_path = "../input/input_seq_L2.csv"
-    # make_xy(dirs_random_l2, "random_l2_4", seq_csv_path)
-    # print(len(load_npy("../data/npy/x_random_l2_4.npy")))
-    # print(len(load_npy("../data/npy/y_random_l2_4.npy")))
+    # make_xy(dirs_random_l2, "random_l2_5", seq_csv_path)
+    # print(len(load_npy("../data/npy/x_random_l2_5.npy")))
+    # print(len(load_npy("../data/npy/y_random_l2_5.npy")))
 
-    dirs_random_l3 =  lr.load_random_dir("oxdna_random_4", "L3")
+    dirs_random_l3 =  lr.load_random_dir("oxdna_random_5", "L3")
     seq_csv_path = "../input/input_seq_L3.csv"
-    make_xy(dirs_random_l3, "random_l3_4", seq_csv_path)
-    print(len(load_npy("../data/npy/x_random_l3_4.npy")))
-    print(len(load_npy("../data/npy/y_random_l3_4.npy")))
+    make_xy(dirs_random_l3, "random_l3_5", seq_csv_path)
+    print(len(load_npy("../data/npy/x_random_l3_5.npy")))
+    print(len(load_npy("../data/npy/y_random_l3_5.npy")))
 
 def main():
     dirs_l2 =  lr.load_l2_directory()

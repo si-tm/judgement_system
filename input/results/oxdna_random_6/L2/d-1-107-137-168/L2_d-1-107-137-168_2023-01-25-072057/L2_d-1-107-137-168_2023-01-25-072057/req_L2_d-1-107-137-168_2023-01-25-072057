@@ -1,0 +1,17 @@
+# type_of_l
+type_of_l = L2
+
+# structure
+number_of_types = 4
+s0 = a a a a* @initial 1.0 M
+s1 = a* b b b* @initial 1.0 M
+s2 = b b b a @initial 1.0 M
+s3 = b a b a* @initial 1.0 M
+
+# length
+length a = 5
+length b = 5
+
+# sequence of domains
+domains a = CTGAT
+domains b = TGATC
