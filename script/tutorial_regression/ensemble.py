@@ -15,10 +15,8 @@ import pandas as pd
 def randomforest_regressor(X, y, X_test, y_test):
     regr = RandomForestRegressor(max_depth=2, random_state=0)
     regr.fit(X, y)
-
-    # print(regr.predict(X_test))
-    # print("score : ", regr.score(X_test, y_test))
     return regr.score(X_test, y_test)
+
 
 # https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html#sklearn.ensemble.ExtraTreesRegressor
 def extratrees_regressor(X, y):
@@ -26,15 +24,12 @@ def extratrees_regressor(X, y):
         X, y, random_state=0)
     reg = ExtraTreesRegressor(n_estimators=100, random_state=0).fit(
     X_train, y_train)
-    # print(reg.score(X_test, y_test))
     return reg.score(X_test, y_test)
 
 # https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html#sklearn.ensemble.GradientBoostingRegressor
 def gradientboosting_regressor(X_train, X_test, y_train, y_test):
     reg = GradientBoostingRegressor(random_state=0)
     reg.fit(X_train, y_train)
-    # print(reg.predict(X_test[1:2]))
-    # print(reg.score(X_test, y_test))
     return reg.score(X_test, y_test)
 
 # https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html#sklearn.ensemble.StackingRegressor
@@ -49,13 +44,7 @@ def stacking_regressor(X_train, X_test, y_train, y_test):
         final_estimator=RandomForestRegressor(n_estimators=10,
                                             random_state=42)
     )
-    # X_train, X_test, y_train, y_test = train_test_split(
-    #     X, y, random_state=42
-    # )
-    # print(X_train.shape)
     ref = reg.fit(X_train, y_train)
-    # print(ref.score(X_test, y_test))
-
     return ref.score(X_test, y_test)
 
 # https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.VotingRegressor.html#sklearn.ensemble.VotingRegressor
@@ -68,14 +57,10 @@ def voting_regressor(X, y, x_train, x_test, y_train, y_test):
     er = VotingRegressor([('lr', r1), ('rf', r2), ('r3', r3)])
     er = er.fit(X, y)
     er.predict(X)
-    # print(er.score(x_train, y_train))
-    # print(er.score(x_test, y_test))
     return er.score(x_test, y_test)
 
 def histgradientboosting_regressor(X, y, x_train, x_test, y_train, y_test):
     est = HistGradientBoostingRegressor().fit(X, y)
-    # print(est.score(X, y))
-    # print(est.score(x_test, y_test))
     return est.score(x_test, y_test)
 
 def get_model():
@@ -99,7 +84,6 @@ def neural_mse(x, y, x_train, x_test, y_train, y_test):
 
     mse = tf.keras.losses.MeanSquaredError()
 
-    # print(mse(y_test,test_predictions).numpy())
     return mse(y_test,test_predictions).numpy()
 
 def data_print(extratrees, randomforest, gradientboosting, stacking, voting, histgradientboosting, neural_mse_score):
@@ -119,13 +103,6 @@ def data_print(extratrees, randomforest, gradientboosting, stacking, voting, his
 
 def main():
     x, y, x_train, x_test, y_train, y_test = ld.load_xy()
-    # extratrees_regressor(X, y)
-    # randomforest_regressor(X=x_train, y=y_train, X_test=x_test, y_test=y_test) 
-    # gradientboosting_regressor(x_train, x_test, y_train, y_test)
-    # stacking_regressor(x_train, x_test, y_train, y_test)
-    # voting_regressor(x, y, x_train, x_test, y_train, y_test)
-    # histgradientboosting_regressor(x, y, x_train, x_test, y_train, y_test)
-    # neural_mse(x, y, x_train, x_test, y_train, y_test)
 
     extratrees = extratrees_regressor(x, y)
     randomforest = randomforest_regressor(X=x_train, y=y_train, X_test=x_test, y_test=y_test) 
