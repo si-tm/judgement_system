@@ -2,8 +2,13 @@ import numpy as np
 import matplotlib.pylab as plt
 import sys
 import glob
-from common import check_dir as cd
-from measuring_volume import convexhull_volume as cv
+import sys
+sys.path.append('common')
+sys.path.append('measuring_volume')
+import check_dir as cd
+import convexhull_volume as cv
+import get_target_file as gtf
+
 
 def load_directory():
     folder = glob.glob("../input/results/*/*/*/*/")
@@ -91,7 +96,6 @@ def load_l3_directory():
     return right_dir
 
 def load_random_dir(target_dir, type_of_l):
-    # input/results/oxdna_random_1/L[1-3]/組み合わせ/組み合わせNo./組み合わせNo./ファイル
     folder = glob.glob("../input/results/oxdna_random_2/" + type_of_l + "/*/*/*/")
     folder = glob.glob("../input/results/" + target_dir + "/" + type_of_l + "/*/*/*/")
 
@@ -103,12 +107,26 @@ def load_random_dir(target_dir, type_of_l):
 
     return right_dir
 
+def load_diffseq_dir(path="../input/results/oxdna_random_6_diffseq/L1"):
+    # input/results/oxdna_random_6_diffseq/L1/d-0-1/L1_d-0-1_2023-01-30-152202/L1_d-0-1_2023-01-30-152202/energy_L1_d-0-1_2023-01-30-152202.dat
+    folder = glob.glob(path + "/*/*/*/")
+
+    right_dir = []
+    for f in folder:
+        fd = gtf.file_dic(f).keys()
+        if "last_conf" in fd and "input" in fd:
+            if cd.included_full_files(f) == True:
+                right_dir.append(f)
+
+    return right_dir
+
 
 def main():
     # dirs = load_directory()
     # dirs_l3 = load_l3_directory()
     # print(dirs_l3)
-    dirs_random_l1 = load_random_dir("L1")
+    # dirs_random_l1 = load_random_dir("L1")
+    print(len(load_diffseq_dir(path="../input/results/oxdna_random_6_diffseq_2/L1")))
 
 if __name__ == '__main__':
     main()

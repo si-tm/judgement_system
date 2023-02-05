@@ -4,7 +4,8 @@ import sys
 sys.path.append('../')
 sys.path.append('.')
 sys.path.append('measuring_volume/')
-from common import get_target_file as gtf
+sys.path.append('common/')
+import get_target_file as gtf
 from mpl_toolkits.mplot3d import Axes3D
 import get_top_data as gtd
 import get_conf_data as gcd
@@ -16,7 +17,7 @@ def get_all_r(target_dir):
     conf_f = open(conf_name, "r")
     col = 0
 
-    # 4行目からrを読み込む
+
     x = []
     y = []
     z = []
@@ -38,7 +39,7 @@ def get_r(target_dir, strands):
     target_strands = list(strands)
     conf_dic = gcd.get_conf_data(target_dir)
 
-    # 4行目からrを読み込む
+
     x = []
     y = []
     z = []

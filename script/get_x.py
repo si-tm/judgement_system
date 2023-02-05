@@ -110,7 +110,7 @@ def load_x2():
 def load_x(path):
     with open(path, "rb") as tf:
         new_dict = pickle.load(tf)
-        print(new_dict)
+        # print(new_dict)
         return new_dict
 
 
@@ -124,6 +124,14 @@ def make_l():
     l1_csv_path = "../input/input_seq_L3.csv"
     l1_result_path = "../data/dic/x_random_l3_6.pkl"
     dirs_l1 = lr.load_random_dir("oxdna_random_6", "L3")
+    # print(dirs_l1)
+    get_x(l1_csv_path, l1_result_path, dirs_l1)
+    load_x(l1_result_path)
+
+def make_l_diffseq():
+    l1_csv_path = "../input/input_seq_L1.csv"
+    l1_result_path = "../data/dic/x_random_6_diffseq_l1_2.pkl"
+    dirs_l1 = lr.load_diffseq_dir(path="../input/results/oxdna_random_6_diffseq_2/L1")
     # print(dirs_l1)
     get_x(l1_csv_path, l1_result_path, dirs_l1)
     load_x(l1_result_path)
@@ -166,4 +174,5 @@ def main():
 if __name__ == '__main__':
     # main()
     # test()
-    make_l()
+    # make_l()
+    make_l_diffseq()

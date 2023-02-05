@@ -49,6 +49,8 @@ def random_file_dic(dir_path):
     
     # target file
     target = dir_path.split("/")[-1]
+    print(dir_path)
+    print(target)
 
     fd = {}
 
@@ -70,8 +72,8 @@ def random_file_dic(dir_path):
         # if f.split("/")[-1][:4] == "seq" + target_c:
         #     fd["seq"] = f
     
-    for f in fd:
-        print(f, fd[f])
+    # for f in fd:
+    #     print(f, fd[f])
     
     return fd
 
@@ -112,10 +114,17 @@ def get_req(dir_path):
 
 def test():
     dir_path = "../input/results/oxdna_random_1/L1/d-0-6-7-4/L1_d-0-6-7-4_0/L1_d-0-6-7-4_0/"
-    last_conf = get_conf(dir_path)
-    print(last_conf)
-    req = get_req(dir_path)
-    print(req)
+    dir_path = "../input/results/oxdna_random_6_diffseq_2/L1/d-0-3-4-6-8-14/L1_d-0-3-4-6-8-14_2023-01-31-044547/L1_d-0-3-4-6-8-14_2023-01-31-044547/"
+    # last_conf = get_conf(dir_path)
+    # print(last_conf)
+    dic = file_dic(dir_path)
+    # for k in dic:
+    #     # if "../input/results/oxdna_random_1/L1/d-0-6-7-4/L1_d-0-6-7-4_0/L1_d-0-6-7-4_0/trajectory_L1_d-0-6-7-4_0.dat" == dic[k]:
+    #     print(k)
+    #     print(dic[k])
+    #     print()
+    
+    print(len(dic))
     # last_conf = get_conf("../../input/results/oxdna_ked/seqA/A3/test_a3_200000_1")
     # input = get_input("../../input/results/oxdna_ked/seqA/A3/test_a3_200000_1")
     # top = get_top("../../input/results/oxdna_ked/seqA/A3/test_a3_200000_1")

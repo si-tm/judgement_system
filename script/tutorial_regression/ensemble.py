@@ -61,6 +61,7 @@ def voting_regressor(X, y, x_train, x_test, y_train, y_test):
 
 def histgradientboosting_regressor(X, y, x_train, x_test, y_train, y_test):
     est = HistGradientBoostingRegressor().fit(X, y)
+    # est = HistGradientBoostingRegressor().fit(x_train, y_train)
     return est.score(x_test, y_test)
 
 def get_model():
