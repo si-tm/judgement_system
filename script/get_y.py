@@ -93,8 +93,8 @@ def test():
     # y_l2_path = "../data/dic/y_random_l2_5.pkl"
     # dirs_l3 = lr.load_random_dir("oxdna_random_5","L3")
     # y_l3_path = "../data/dic/y_random_l3_5.pkl"
-    dirs_l1_diffseq = lr.load_diffseq_dir(path="../input/results/oxdna_random_6_diffseq_2/L1")
-    y_l1_diffseq_path = "../data/dic/y_random_6_diffseq_l1_2.pkl"
+    dirs_l1_diffseq = lr.load_diffseq_dir(path="../input/results/oxdna_random_6_diffseq_3/L1")
+    y_l1_diffseq_path = "../data/dic/y_random_6_diffseq_l1_3.pkl"
     
     # get_y(y_l1_path, dirs_l1)
     # get_y(y_l2_path, dirs_l2)

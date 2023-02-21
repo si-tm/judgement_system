@@ -71,6 +71,52 @@ def make_xy(dirs, target_name, seq_csv):
     np.save("../data/npy/x_" + target_name + ".npy",x)
     np.save("../data/npy/y_" + target_name + ".npy",y)
 
+def make_xy_ratioB(dirs, target_name, seq_csv):
+    dic_x = gx.load_x("../data/dic/x_random_l1_6.pkl")
+    dic_y = gy.load_y("../data/dic/L1_data_1.pkl")
+    x_lst = mis.seq_lst(seq_csv)
+
+    x = []
+    y = []
+
+    print(len(dic_x))
+    print(len(dic_y))
+
+    for d in dirs:
+        # print(d)
+        x.append(dic2lst(dic_x[d], x_lst))
+        y.append(dic_y[d]["ratio_of_volume"])
+    
+    # print(x)
+    # print(y)
+    
+    np.save("../data/npy/x_" + target_name + "_rb.npy",x)
+    np.save("../data/npy/y_" + target_name + "_rb.npy",y)
+
+def make_xy_ratioB(dirs, target_name, seq_csv):
+    dic_x = gx.load_x("../data/dic/x_random_l2_6.pkl")
+    dic_y = gy.load_y("../data/dic/L2_data_1.pkl")
+    x_lst = mis.seq_lst(seq_csv)
+
+    x = []
+    y = []
+
+    print(len(dic_x))
+    print(len(dic_y))
+
+    for d in dirs:
+        # print(d)
+        x.append(dic2lst(dic_x[d], x_lst))
+        y.append(dic_y[d]["deviation_of_volume"])
+    
+    # print(x)
+    # print(y)
+    
+    np.save("../data/npy/x_" + target_name + "_dv.npy",x)
+    np.save("../data/npy/y_" + target_name + "_dv.npy",y)
+
+
+
 def load_npy(path):
     z = np.load(path) 
     return z
@@ -129,11 +175,36 @@ def test():
     # print(len(load_npy("../data/npy/x_random_l2_6.npy")))
     # print(len(load_npy("../data/npy/y_random_l2_6.npy")))
 
-    dirs_random_l3 =  lr.load_random_dir("oxdna_random_6", "L3")
-    seq_csv_path = "../input/input_seq_L3.csv"
-    make_xy(dirs_random_l3, "random_l3_6", seq_csv_path)
-    print(len(load_npy("../data/npy/x_random_l3_6.npy")))
-    print(len(load_npy("../data/npy/y_random_l3_6.npy")))
+    # dirs_random_l3 =  lr.load_random_dir("oxdna_random_6", "L3")
+    # seq_csv_path = "../input/input_seq_L3.csv"
+    # make_xy(dirs_random_l3, "random_l3_6", seq_csv_path)
+    # print(len(load_npy("../data/npy/x_random_l3_6.npy")))
+    # print(len(load_npy("../data/npy/y_random_l3_6.npy")))
+
+    # dirs_random_l1 =  lr.load_random_dir("oxdna_random_6", "L1")
+    # seq_csv_path = "../input/input_seq_L1.csv"
+    # make_xy_ratioB(dirs_random_l1, "random_l1_6", seq_csv_path)
+    # print(load_npy("../data/npy/x_random_l1_6_rb.npy"))
+    # print(load_npy("../data/npy/y_random_l1_6_rb.npy"))
+
+    # dirs_random_l1 =  lr.load_random_dir("oxdna_random_6", "L1")
+    # seq_csv_path = "../input/input_seq_L1.csv"
+    # make_xy_ratioB(dirs_random_l1, "random_l1_6", seq_csv_path)
+    # print(load_npy("../data/npy/x_random_l1_6_dv.npy"))
+    # print(load_npy("../data/npy/y_random_l1_6_dv.npy"))
+
+    dirs_random_l1 =  lr.load_random_dir("oxdna_random_6", "L2")
+    seq_csv_path = "../input/input_seq_L2.csv"
+    make_xy_ratioB(dirs_random_l1, "random_l2_6", seq_csv_path)
+    print(load_npy("../data/npy/x_random_l2_6_dv.npy"))
+    print(load_npy("../data/npy/y_random_l2_6_dv.npy"))
+
+    # dirs_random_l1 =  lr.load_random_dir("oxdna_random_6", "L3")
+    # seq_csv_path = "../input/input_seq_L3.csv"
+    # make_xy_ratioB(dirs_random_l1, "random_l3_6", seq_csv_path)
+    # print(load_npy("../data/npy/x_random_l3_6_dv.npy"))
+    # print(load_npy("../data/npy/y_random_l3_6_dv.npy"))
+
 
 def main():
     dirs_l2 =  lr.load_l2_directory()

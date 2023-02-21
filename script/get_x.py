@@ -130,8 +130,8 @@ def make_l():
 
 def make_l_diffseq():
     l1_csv_path = "../input/input_seq_L1.csv"
-    l1_result_path = "../data/dic/x_random_6_diffseq_l1_2.pkl"
-    dirs_l1 = lr.load_diffseq_dir(path="../input/results/oxdna_random_6_diffseq_2/L1")
+    l1_result_path = "../data/dic/x_random_6_diffseq_l1_3.pkl"
+    dirs_l1 = lr.load_diffseq_dir(path="../input/results/oxdna_random_6_diffseq_3/L1")
     # print(dirs_l1)
     get_x(l1_csv_path, l1_result_path, dirs_l1)
     load_x(l1_result_path)

@@ -1,5 +1,5 @@
-# import numpy as np
-# import matplotlib.pylab as plt
+import numpy as np
+import matplotlib.pylab as plt
 import glob
 import sys
 
@@ -49,8 +49,8 @@ def random_file_dic(dir_path):
     
     # target file
     target = dir_path.split("/")[-1]
-    print(dir_path)
-    print(target)
+    # print(dir_path)
+    # print(target)
 
     fd = {}
 

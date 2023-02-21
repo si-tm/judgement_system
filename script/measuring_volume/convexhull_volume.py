@@ -11,6 +11,8 @@ import get_top_data as gtd
 import get_conf_data as gcd
 from scipy.spatial import ConvexHull
 import k3d
+import statistics
+import math
 
 def get_all_r(target_dir):
     conf_name = gtf.get_conf(target_dir)
@@ -109,6 +111,27 @@ def convexhull_volume_all_strands(target_dir):
     mean_volume /= num_of_strands
     print(target_dir + " : mean volume is " + str(mean_volume))
     return mean_volume
+
+def convexhull_volume_all_strands_meandev(target_dir):
+    strands2particle, particle2strand = gtd.get_particle_strands_data(target_dir)
+
+    volumes = {}
+
+    for strand in strands2particle:
+        x, y, z = get_r(target_dir, strands2particle[strand])
+        volumes[strand] = convexhull_volume(x, y, z)
+        # plot(x, y, z, target_dir)
+    
+    mean_volume = 0.0
+    num_of_strands = float(len(strands2particle))
+
+    for strand in volumes:
+        mean_volume += volumes[strand]
+    
+    mean_volume /= num_of_strands
+    dev_volume = statistics.pstdev(volumes)
+
+    return mean_volume, dev_volume
 
 def test():
     target_dir="../../input/results/oxdna_ked/seqA/A4/test_a4_200000_1"

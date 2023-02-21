@@ -666,3 +666,7 @@ reaction [bind21         =      3.9e+06 /M/s ] s1 + s3 -> e17
 reaction [bind21         =      3.9e+06 /M/s ] s1 + s4 -> e7
 reaction [bind11         =        33000 /s   ] s2 -> e0
 reaction [bind21         =      3.9e+06 /M/s ] s3 + s4 -> e11
+
+# sequence of domains
+domain a = GCTCGTCGTG
+domain b = TTCTGACGAC

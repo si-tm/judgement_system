@@ -41,7 +41,7 @@ def pil2req(pil_path, target_dir):
     file_no = target_dir.split("/")[-2][-1]
 
     for l in pil_f:
-        if l[0] != 'e':
+        if l[0] != 'e' or l == "# Resting complexes" :
             req.write(l)
         else:
             all_e.write(l)
@@ -71,6 +71,10 @@ def reqseq2eratio(target_dir):
             domain_name = l.split(" ")[1]
             domain_sequence = l.split(" ")[-1].replace("\n", "")
             print(domain_name, domain_sequence)
+
+    for l in req_f:
+        if l[0] == 's':
+            l.split(" ")
 
 
 

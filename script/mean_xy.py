@@ -56,8 +56,8 @@ def mean_xy_dic(x_dic_path, y_dic_path, dirs):
     print(len(new_x_dic))
     print(len(new_x_dic))
     
-    x_result_path = "../data/dic/x_random_6_diffseq_mean_l1_2.pkl"
-    y_result_path = "../data/dic/y_random_6_diffseq_mean_l1_2.pkl"
+    x_result_path = "../data/dic/x_random_6_diffseq_mean_l1_3.pkl"
+    y_result_path = "../data/dic/y_random_6_diffseq_mean_l1_3.pkl"
     
     with open(x_result_path, "wb") as tf:
         pickle.dump(new_x_dic,tf)
@@ -75,8 +75,8 @@ def mean_make_xy(dirs):
 
 
     seq_csv = "../input/input_seq_L1.csv"
-    dic_x = gx.load_x("../data/dic/x_random_6_diffseq_mean_l1_2.pkl")
-    dic_y = gy.load_y("../data/dic/y_random_6_diffseq_mean_l1_2.pkl")
+    dic_x = gx.load_x("../data/dic/x_random_6_diffseq_mean_l1_3.pkl")
+    dic_y = gy.load_y("../data/dic/y_random_6_diffseq_mean_l1_3.pkl")
     x_lst = mis.seq_lst(seq_csv)
 
     x = []
@@ -94,15 +94,15 @@ def mean_make_xy(dirs):
     print(len(x))
     print(len(y))
     
-    np.save("../data/npy/x_random_6_diffseq_mean_l1_2.npy",x)
-    np.save("../data/npy/y_random_6_diffseq_mean_l1_2.npy",y)
+    np.save("../data/npy/x_random_6_diffseq_mean_l1_3.npy",x)
+    np.save("../data/npy/y_random_6_diffseq_mean_l1_3.npy",y)
 
 
 def main():
-    x_dic_path="../data/dic/x_random_6_diffseq_l1_2.pkl"
-    y_dic_path="../data/dic/y_random_6_diffseq_l1_2.pkl"
+    x_dic_path="../data/dic/x_random_6_diffseq_l1_3.pkl"
+    y_dic_path="../data/dic/y_random_6_diffseq_l1_3.pkl"
     # dirs = lr.load_diffseq_dir(path="../input/results/oxdna_random_6_diffseq_2/L1")
-    dirs = lr.load_diffseq_dir(path="../input/results/oxdna_random_6_diffseq_2/L1")
+    dirs = lr.load_diffseq_dir(path="../input/results/oxdna_random_6_diffseq_3/L1")
     print(len(dirs))
     new_dirs = mean_xy_dic(x_dic_path, y_dic_path, dirs=dirs)
     # print("d-3-6-11-12-13" in new_dirs)
