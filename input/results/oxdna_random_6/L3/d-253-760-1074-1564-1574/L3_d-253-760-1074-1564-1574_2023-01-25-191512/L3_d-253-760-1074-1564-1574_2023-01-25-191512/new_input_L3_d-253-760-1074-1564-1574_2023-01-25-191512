@@ -1,0 +1,30 @@
+####  PROGRAM PARAMETERS  ####
+##############################
+sim_type = VMMC
+backend = CPU
+#debug = 1
+seed = 42
+
+##############################
+####    SIM PARAMETERS    ####
+##############################
+; steps = 10
+steps = 200000
+newtonian_steps = 103
+diff_coeff = 2.50
+thermostat = john
+
+list_type = cells
+ensemble = nvt
+delta_translation = 0.22
+delta_rotation = 0.22
+
+T = 334 K
+dt = 0.003
+verlet_skin = 0.5
+
+##############################
+####    INPUT / OUTPUT    ####
+##############################
+topology = ../input/results/oxdna_random_6/L3/d-253-760-1074-1564-1574/L3_d-253-760-1074-1564-1574_2023-01-25-191512/L3_d-253-760-1074-1564-1574_2023-01-25-191512/generated_L3_d-253-760-1074-1564-1574_2023-01-25-191512.top
+conf_file = ../input/results/oxdna_random_6/L3/d-253-760-1074-1564-1574/L3_d-253-760-1074-1564-1574_2023-01-25-191512/L3_d-253-760-1074-1564-1574_2023-01-25-191512/generated_L3_d-253-760-1074-1564-1574_2023-01-25-191512.top

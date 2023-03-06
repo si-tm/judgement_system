@@ -35,4 +35,4 @@ make neural network
 - [darknet](https://github.com/pjreddie/darknet)
 - [sequential model](https://www.tensorflow.org/guide/keras/sequential_model?hl=ja)
 - [tensorflow tutorial](https://www.tensorflow.org/tutorials)
-- 
+- [.gitignore](https://qiita.com/takashimelon/items/def769aaaa1d41cc44d4)

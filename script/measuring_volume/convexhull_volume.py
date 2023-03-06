@@ -10,7 +10,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import get_top_data as gtd
 import get_conf_data as gcd
 from scipy.spatial import ConvexHull
-import k3d
+# import k3d
 import statistics
 import math
 

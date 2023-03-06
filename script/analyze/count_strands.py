@@ -17,10 +17,24 @@ def count_strands(target_dir):
 
     return (before, after)
 
+# strand数の前後を書く．
+def analyze_strands(target_dir):
+    strands2particle, particle2strand = gtd.make_initial_strands_data(target_dir)
+    strands2particle, particle2strand = gtd.get_connection_strands(gtf.get_bonds(target_dir), strands2particle, particle2strand)
+
+    # which paricle are bonded
+    # for strand in strands2particle:
+        # print(strand)
+        # print(strand, strands2particle[strand])
+    # print(particle2strand)
+
+
 def test():
-    target_dir = "../input/results/oxdna_random_6_diffseq_3/L1/d-0-1/L1_d-0-1_2023-01-30-152202/L1_d-0-1_2023-01-30-152202/"
+    # target_dir = "../input/results/oxdna_random_6_diffseq_3/L1/d-0-1/L1_d-0-1_2023-01-30-152202/L1_d-0-1_2023-01-30-152202/"
+    target_dir = "../input/results/oxdna_ked_2/seqD/D1/test_d1_200000_1"
     before, after = count_strands(target_dir)
     print(before, after)
+    analyze_strands(target_dir)
 
 # def main():
 

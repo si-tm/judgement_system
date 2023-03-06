@@ -69,7 +69,8 @@ def get_connection_strands(bonds_name, strands2particle, particle2strand):
             strand_id1 = particle2strand[particle_id1]
             strand_id2 = particle2strand[particle_id2]
             # strand idが異なる場合、小さい方に合わせる
-            if strand_id2 == strand_id1:
+            # if strand_id2 == strand_id1:
+            if strand_id2 != strand_id1:
                 s_id1 = min(strand_id1, strand_id2)
                 s_id2 = max(strand_id1, strand_id2)
                 if s_id2 in strands2particle:
@@ -78,6 +79,39 @@ def get_connection_strands(bonds_name, strands2particle, particle2strand):
                         particle2strand[particle] = s_id1
 
                     strands2particle[s_id1] |= strands2particle[s_id2]
+                    strands2particle.pop(s_id2)
+
+    return strands2particle, particle2strand
+
+
+def get_connection_strands2(bonds_name, strands2particle, particle2strand):
+    
+    bonds_dic = get_bonds_data(bonds_name)
+    # HB < 0.0同士のparticle id1, id2である時、strand idが小さい方に合体させる
+    
+    for b in bonds_dic:
+        
+        if b[1] == "HB" and bonds_dic[b] < 0.0:
+            particle_id1 = b[0][0]
+            particle_id2 = b[0][1]
+            strand_id1 = particle2strand[particle_id1]
+            strand_id2 = particle2strand[particle_id2]
+            # strand idが異なる場合、小さい方に合わせる
+            if strand_id2 != strand_id1:
+                print(strand_id1, strand_id2)
+                s_id1 = min(strand_id1, strand_id2)
+                s_id2 = max(strand_id1, strand_id2)
+                print(s_id1, s_id2)
+                if s_id2 in strands2particle:
+                    # s_id2 → s_id1へ
+                    for particle in list(strands2particle[s_id2]):
+                        particle2strand[particle] = s_id1
+
+                    # strands2particle[s_id1] |= strands2particle[s_id2]
+                    # strands2particle[s_id1] = strands2particle[s_id1] | strands2particle[s_id2]
+                    print(strands2particle[s_id1] | strands2particle[s_id2])
+                    tmp = strands2particle[s_id1] | strands2particle[s_id2]
+                    print(tmp)
                     strands2particle.pop(s_id2)
 
     return strands2particle, particle2strand
