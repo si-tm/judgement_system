@@ -106,10 +106,12 @@ def convexhull_volume_all_strands(target_dir):
     num_of_strands = float(len(strands2particle))
 
     for strand in volumes:
+        # print(volumes[strand])
         mean_volume += volumes[strand]
     
     mean_volume /= num_of_strands
     print(target_dir + " : mean volume is " + str(mean_volume))
+    print(target_dir + " : number of strands is " + str(num_of_strands))
     return mean_volume
 
 def convexhull_volume_all_strands_meandev(target_dir):
@@ -122,6 +124,8 @@ def convexhull_volume_all_strands_meandev(target_dir):
         volumes[strand] = convexhull_volume(x, y, z)
         # plot(x, y, z, target_dir)
     
+    print(volumes[strand])
+    
     mean_volume = 0.0
     num_of_strands = float(len(strands2particle))
 
@@ -130,6 +134,7 @@ def convexhull_volume_all_strands_meandev(target_dir):
     
     mean_volume /= num_of_strands
     dev_volume = statistics.pstdev(volumes)
+    print(num_of_strands)
 
     return mean_volume, dev_volume
 
