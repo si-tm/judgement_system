@@ -29,7 +29,7 @@ def make_data(path, type_of_l):
         # print(before, after)
         print(dic[d])
     
-    result_path =  "../data/dic/" + type_of_l + "_data_1.pkl"
+    result_path =  "../data/dic/" + type_of_l + "_data_3.pkl"
     
     with open(result_path, "wb") as tf:
         pickle.dump(dic,tf)
@@ -39,7 +39,7 @@ def make_data(path, type_of_l):
 
 def test():
     path="../input/results/oxdna_random_6"
-    type_of_l="L2"
+    type_of_l="L3"
     make_data(path, type_of_l)
 
 def main():
@@ -51,7 +51,6 @@ def main():
     make_data(path, type_of_l)
     
 
-
 if __name__ == '__main__':
-    main()
-    # test()
+    # main()
+    test()

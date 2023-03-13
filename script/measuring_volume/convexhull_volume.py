@@ -36,6 +36,32 @@ def get_all_r(target_dir):
     conf_f.close()
     return x, y, z
 
+def translate_strand(points, box=100):
+    # type of points is [[cm_pos_x, cm_pos_y, cm_pos_z]]
+    # 2.translate(np.rint((s1.cm_pos - s2.cm_pos - diff1 + diff2) / self._box) * self._box)
+    # diff1 = np.rint(s1.cm_pos / self._box ) * self._box
+
+    new_points = []
+
+    for index, p in enumerate(points):
+        if index == 0:
+            plst = np.array(p)
+            first_diff = np.rint(plst/box) * box
+            first_p = plst
+            new_points.append(p)
+        else:
+            plst = np.array(p)
+            tmp_diff = np.rint(plst/box) * box
+            # print(tmp_diff)
+            # p += np.rint((first_p - plst - first_diff + tmp_diff) / box) * box
+            p += first_diff - tmp_diff
+            # print(np.rint((- plst + tmp_diff) / box) * box)
+            new_points.append(p)
+    
+    return new_points
+
+
+
 def get_r(target_dir, strands):
 
     target_strands = list(strands)
@@ -58,9 +84,13 @@ def convexhull_volume(x, y, z):
     for i in range(len(x)):
         lst = [x[i], y[i], z[i]]
         points.append(lst)
-    hull = ConvexHull(points)
-
+    
+    print(points)
+    # 追加
+    points = translate_strand(points, box=100)
     points = np.array(points)
+    
+    hull = ConvexHull(points)
 
 
 
@@ -122,9 +152,10 @@ def convexhull_volume_all_strands_meandev(target_dir):
     for strand in strands2particle:
         x, y, z = get_r(target_dir, strands2particle[strand])
         volumes[strand] = convexhull_volume(x, y, z)
+        #         print(x, y, z)
         # plot(x, y, z, target_dir)
     
-    print(volumes[strand])
+    print(volumes)
     
     mean_volume = 0.0
     num_of_strands = float(len(strands2particle))
