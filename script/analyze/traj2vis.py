@@ -203,7 +203,7 @@ while True:
     if xyz:
         # print >> out, 2 * nnucl
         # print >> out
-        out.write(str(2 * nnucl))
+        out.write(str(2 * nnucl) + "\n")
         print(out, 2 * nnucl)
         print(out)
         for i in range(nnucl):
@@ -215,11 +215,11 @@ while True:
                 rnow = rcs[i] - cdms[sid] + float(POS_BACK) * a1s[i] + (cdms[sid] - ocdm) - box * np.rint ((cdms[sid] - ocdm) / box)
             # print >> out, "C %lf %lf %lf" % (rnow[0], rnow[1], rnow[2])
             print(out, "C %lf %lf %lf" % (rnow[0], rnow[1], rnow[2]))
-            out.write(str("C %lf %lf %lf" % (rnow[0], rnow[1], rnow[2])))
+            out.write(str("C %lf %lf %lf" % (rnow[0], rnow[1], rnow[2]) + "\n"))
             rnow = rcs[i] - cdms[sid] + float(POS_BASE) * a1s[i] + (cdms[sid] - ocdm) - box * np.rint ((cdms[sid] - ocdm) / box)
             #rnow = rcs[i] - cdms[strandid[i]] + POS_BASE * a1s[i]
             print(out, "O %lf %lf %lf" % (rnow[0], rnow[1], rnow[2]))
-            out.write(str("O %lf %lf %lf" % (rnow[0], rnow[1], rnow[2])))
+            out.write(str("O %lf %lf %lf" % (rnow[0], rnow[1], rnow[2]) + "\n"))
     elif pdb:
         # header
         res = "HEADER    frame t= " + str(times[nconfs])+ " \nMODEL        0 \nREMARK ## 0,0\n" 
@@ -276,7 +276,7 @@ while True:
             res += "ANISOU%5d %4s %3s %c%4d%c %7i%7i%7i%7i%7i%7i\n" % (index_jump * i + 3, atomtype, stringid, 'C', i, ' ' , anis[0,0]*1000, anis[1,1]*1000, anis[2,2]*1000, anis[0,1]*1000, anis[0,2]*1000, anis[1,2]*1000)
 
         res += "REMARK  ######### \n\nTER \nENDML \n "
-        out.write (res)
+        out.write (res + "\n")
 
     nconfs += 1
 
