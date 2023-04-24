@@ -327,6 +327,7 @@ if pdb:
         #print c
         # print >> f, c
         print(f, c)
+        f.write(c)
     f.close ()
 
 # $oxDNA/UTILS/traj2vis.py xyz <trajectory> <topology> 
