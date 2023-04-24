@@ -1,3 +1,6 @@
 {
-    "cmake.sourceDirectory": "${workspaceFolder}/script"
+    "cmake.sourceDirectory": "${workspaceFolder}/script",
+    "python.analysis.extraPaths": [
+        "./script/common"
+    ]
 }
