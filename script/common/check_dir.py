@@ -2,7 +2,7 @@
 # import matplotlib.pylab as plt
 import sys
 sys.path.append('common')
-import get_target_file as gtf
+import common.get_target_file as gtf
 
 def is_random(target_dir):
     if "random" in target_dir:

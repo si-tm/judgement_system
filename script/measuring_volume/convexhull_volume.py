@@ -5,10 +5,10 @@ sys.path.append('../')
 sys.path.append('.')
 sys.path.append('measuring_volume/')
 sys.path.append('common/')
-import get_target_file as gtf
+import common.get_target_file as gtf
 from mpl_toolkits.mplot3d import Axes3D
-import get_top_data as gtd
-import get_conf_data as gcd
+import measuring_volume.get_top_data as gtd
+import measuring_volume.get_conf_data as gcd
 from scipy.spatial import ConvexHull
 # import k3d
 import statistics
