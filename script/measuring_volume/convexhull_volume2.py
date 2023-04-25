@@ -14,6 +14,7 @@ from scipy.spatial import ConvexHull
 import statistics
 import math
 import subprocess
+import time
 
 
 def get_r(particle2r, strands):
@@ -64,13 +65,17 @@ def execute_traj2r(target_dir):
     traj = gtf.get_conf(target_dir)
     top = gtf.get_top(target_dir)
     subprocess.run(["measuring_volume/traj2r.py", "xyz", traj, top])
+    return traj
 
 # 非同期処理？？
 def get_particle2r(target_dir):
     # execute traj2r.py in target_dir
     # get result file 
     execute_traj2r(target_dir)
-    result_r_filename = gtf.get_conf(target_dir) + ".rxyz"
+    print()
+    result_r_filename = execute_traj2r(target_dir) + ".rxyz"
+    time.sleep(10)
+    print(result_r_filename)
     # read points
     f = open(result_r_filename, "r")
     new_points = []
@@ -82,6 +87,7 @@ def get_particle2r(target_dir):
         for r in l[:-2].split(' '):
             tmp_point.append(float(r))
         new_points.append(tmp_point)
+    
 
     # make particle2r
     particle2r = {}
@@ -94,6 +100,7 @@ def get_particle2r(target_dir):
 def tmp_convexhull_volume_all_strands_meandev2(target_dir):
     strands2particle, particle2strand = gtd.make_initial_strands_data(target_dir)
     particle2r = get_particle2r(target_dir)
+    
     volumes = {}
 
     strands2particle, particle2strand = gtd.get_particle_strands_data(target_dir)
@@ -123,7 +130,10 @@ def tmp_convexhull_volume_all_strands_meandev2(target_dir):
 
 
 def test():
-    target_dir="../input/results/oxdna_ked/seqA/A4/test_a4_200000_1"
+    # target_dir="../input/results/oxdna_ked/seqA/A4/test_a4_200000_1"
+    # target_dir="../input/results/oxdna_random_6_diffseq_2/L1/d-0-1-2-5-6-10/L1_d-0-1-2-5-6-10_2023-01-30-134804/L1_d-0-1-2-5-6-10_2023-01-30-134804"
+    # target_dir="../input/results/oxdna_random_6_diffseq_2/L1/d-1-4-7-10-12-14/L1_d-1-4-7-10-12-14_2023-02-01-020049/L1_d-1-4-7-10-12-14_2023-02-01-020049"
+    target_dir="../input/results/oxdna_random_6_diffseq_2/L1/d-1-2-8-14/L1_d-1-2-8-14_2023-02-01-011902/L1_d-1-2-8-14_2023-02-01-011902"
     mean_volume, dev_volume = tmp_convexhull_volume_all_strands_meandev2(target_dir)
     print("average : ", mean_volume)
     print("deviation : ", dev_volume)
