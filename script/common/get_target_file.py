@@ -16,6 +16,8 @@ def file_dic(dir_path):
         files = glob.glob(dir_path + "*")
     else:
         files = glob.glob(dir_path + "/*")
+    
+    # print(files)
 
     # target seq file
     target_c = ""
@@ -32,6 +34,9 @@ def file_dic(dir_path):
             fd["topology"] = f
         if f.split("/")[-1][:4] == "seq" + target_c:
             fd["seq"] = f
+        if "rxyz" in f:
+            fd["rxyz"] = f
+
     
     # for f in fd:
     #     print(f)
@@ -46,6 +51,8 @@ def random_file_dic(dir_path):
         dir_path = dir_path[:-1]
     else:
         files = glob.glob(dir_path + "/*")
+
+    # print(files)
     
     # target file
     target = dir_path.split("/")[-1]
@@ -66,6 +73,8 @@ def random_file_dic(dir_path):
             fd["seq"] = f
         if "req_L" in key:
             fd["req"] = f
+        if "rxyz" in f:
+            fd["rxyz"] = f
         # if "seq" in key:
         #     fd["seq"] = f
 
@@ -111,6 +120,13 @@ def get_req(dir_path):
     d = file_dic(dir_path)
     # print(d)
     return d["req"]
+
+def get_rxyz(dir_path):
+    d = file_dic(dir_path)
+    print(d.keys())
+    if not "rxyz" in d:
+        return False
+    return d["rxyz"]
 
 def test():
     dir_path = "../input/results/oxdna_random_1/L1/d-0-6-7-4/L1_d-0-6-7-4_0/L1_d-0-6-7-4_0/"

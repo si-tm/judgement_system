@@ -14,6 +14,8 @@ from scipy.spatial import ConvexHull
 import statistics
 import math
 
+# 間違ってる
+
 def get_all_r(target_dir):
     conf_name = gtf.get_conf(target_dir)
     conf_f = open(conf_name, "r")

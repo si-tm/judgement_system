@@ -5,16 +5,18 @@ sys.path.append("common")
 import pickle
 import glob
 import count_strands as cs
-import convexhull_volume as cv
+# import convexhull_volume as cv
+import measuring_volume.convexhull_volume2 as cv
 import run_output_bonds as rob
 import check_dir as cd
 import get_target_file as gtf
 
-def make_data(path, type_of_l):
+def make_data(path, type_of_l, version=4):
     # input/results/oxdna_random_6/L1/d-0-1/L1_d-0-1_2023-01-27-083608/L1_d-0-1_2023-01-27-083608/bonds
     dirs = glob.glob(path + "/" + type_of_l + "/*/*/*/")
     dic = {}
     for d in dirs:
+        print(d)
         if cd.included_full_files(d) == False:
             continue
         # make bonds
@@ -29,7 +31,7 @@ def make_data(path, type_of_l):
         # print(before, after)
         print(dic[d])
     
-    result_path =  "../data/dic/" + type_of_l + "_data_3.pkl"
+    result_path =  "../data/dic/" + type_of_l + "_data_" + str(version) + ".pkl"
     
     with open(result_path, "wb") as tf:
         pickle.dump(dic,tf)
@@ -39,18 +41,20 @@ def make_data(path, type_of_l):
 
 def test():
     path="../input/results/oxdna_random_6"
-    type_of_l="L3"
+    type_of_l="L1"
     make_data(path, type_of_l)
 
 def main():
-    if len(sys.argv) != 3:
-        print("usage : python make_data.py [path] [type_of_path]")
+    if len(sys.argv) != 4:
+        print("usage : python make_data.py [path] [type_of_path] [version]")
     
     path=sys.argv[1]
     type_of_l=sys.argv[2]
-    make_data(path, type_of_l)
+    version=int(sys.argv[3])
+    # print(path, type_of_l, version)
+    make_data(path, type_of_l, version)
     
 
 if __name__ == '__main__':
-    # main()
-    test()
+    main()
+    # test()

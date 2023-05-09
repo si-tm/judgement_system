@@ -15,6 +15,7 @@ import statistics
 import math
 import subprocess
 import time
+import os
 
 
 def get_r(particle2r, strands):
@@ -67,14 +68,23 @@ def execute_traj2r(target_dir):
     subprocess.run(["measuring_volume/traj2r.py", "xyz", traj, top])
     return traj
 
-# 非同期処理？？
+# 同期処理？？
 def get_particle2r(target_dir):
     # execute traj2r.py in target_dir
     # get result file 
-    execute_traj2r(target_dir)
-    print()
-    result_r_filename = execute_traj2r(target_dir) + ".rxyz"
-    time.sleep(10)
+    # result_r_filename = execute_traj2r(target_dir) + ".rxyz"
+    # time.sleep(100)
+
+    path = gtf.get_rxyz(target_dir)
+    # is_file = os.path.isfile(path)
+    if path:
+        print(f"{path} is a file.")
+    else:
+        execute_traj2r(target_dir)
+        # これが終わったら
+        print()
+
+    result_r_filename = gtf.get_rxyz(target_dir)
     print(result_r_filename)
     # read points
     f = open(result_r_filename, "r")
@@ -97,7 +107,8 @@ def get_particle2r(target_dir):
     return particle2r
 
 
-def tmp_convexhull_volume_all_strands_meandev2(target_dir):
+# def tmp_convexhull_volume_all_strands_meandev2(target_dir):
+def convexhull_volume_all_strands_meandev(target_dir):
     strands2particle, particle2strand = gtd.make_initial_strands_data(target_dir)
     particle2r = get_particle2r(target_dir)
     
@@ -134,7 +145,7 @@ def test():
     # target_dir="../input/results/oxdna_random_6_diffseq_2/L1/d-0-1-2-5-6-10/L1_d-0-1-2-5-6-10_2023-01-30-134804/L1_d-0-1-2-5-6-10_2023-01-30-134804"
     # target_dir="../input/results/oxdna_random_6_diffseq_2/L1/d-1-4-7-10-12-14/L1_d-1-4-7-10-12-14_2023-02-01-020049/L1_d-1-4-7-10-12-14_2023-02-01-020049"
     target_dir="../input/results/oxdna_random_6_diffseq_2/L1/d-1-2-8-14/L1_d-1-2-8-14_2023-02-01-011902/L1_d-1-2-8-14_2023-02-01-011902"
-    mean_volume, dev_volume = tmp_convexhull_volume_all_strands_meandev2(target_dir)
+    mean_volume, dev_volume = convexhull_volume_all_strands_meandev(target_dir)
     print("average : ", mean_volume)
     print("deviation : ", dev_volume)
     
@@ -143,7 +154,7 @@ def main():
     if len(sys.argv) != 2:
         print("usage : python convexhull_volume.py [target directory name]")
     else:
-        tmp_convexhull_volume_all_strands_meandev2(sys.argv[1])
+        convexhull_volume_all_strands_meandev(sys.argv[1])
 
 if __name__ == '__main__':
     test()
