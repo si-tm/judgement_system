@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pylab as plt
 import glob
 import sys
+import os.path
 
 # judge if this directory has an error.
 
@@ -12,22 +13,20 @@ def file_dic(dir_path):
     if "random" in dir_path:
         return random_file_dic(dir_path)
 
-    if dir_path[-1] == "/":
-        files = glob.glob(dir_path + "*")
-    else:
-        files = glob.glob(dir_path + "/*")
+    files = glob.glob(os.path.join(dir_path,"*"))
     
     # print(files)
 
     # target seq file
     target_c = ""
-    for d in dir_path.split("/"):
-        if "seq" in d:
-            target_c = d[-1]
+    #for d in dir_path.split("/"):
+    #    if "seq" in d:
+    #        target_c = d[-1]
 
     fd = {}
 
     for f in files:
+        #os.path.basename(f)
         key = f.split("/")[-1][:f.split("/")[-1].find("_seq" + target_c + "-")]
         fd[key] = f
         if f[-4:] == ".top":
@@ -46,35 +45,43 @@ def file_dic(dir_path):
 def random_file_dic(dir_path):
     # print("random")
     # input/results/oxdna_random_1/L1/d-0-6-7-4/L1_d-0-6-7-4_0/L1_d-0-6-7-4_0/
+    files = glob.glob(os.path.join(dir_path,"*"))
+
     if dir_path[-1] == "/":
-        files = glob.glob(dir_path + "*")
         dir_path = dir_path[:-1]
-    else:
-        files = glob.glob(dir_path + "/*")
 
     # print(files)
     
     # target file
-    target = dir_path.split("/")[-1]
+    target = os.path.basename(dir_path)
     # print(dir_path)
     # print(target)
 
     fd = {}
 
     for f in files:
-        key = f.split("/")[-1]
+        key = os.path.basename(f)
         key = key[:key.find("_" + target)]
-        fd[key] = f
+        
         if f[-4:] == ".top":
             fd["topology"] = f
-        if key == "hb":
+        elif key == "hb":
             fd["hb_energy"] = f
-        if "seq_req" in key:
+        elif "seq_req" in key:
             fd["seq"] = f
-        if "req_L" in key:
+        elif "req_L" in key:
             fd["req"] = f
-        if "rxyz" in f:
+        elif "rxyz" in f:
             fd["rxyz"] = f
+        else:
+            i = 0
+            basekey = key
+            while key in fd:
+                print("WARNING!! conflicting keys")
+                key = basekey+str(i)
+                i=i+1
+            fd[key] = f
+        
         # if "seq" in key:
         #     fd["seq"] = f
 

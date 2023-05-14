@@ -10,13 +10,15 @@ import measuring_volume.convexhull_volume2 as cv
 import run_output_bonds as rob
 import check_dir as cd
 import get_target_file as gtf
+import datetime
 
 def make_data(path, type_of_l, version=4):
     # input/results/oxdna_random_6/L1/d-0-1/L1_d-0-1_2023-01-27-083608/L1_d-0-1_2023-01-27-083608/bonds
     dirs = glob.glob(path + "/" + type_of_l + "/*/*/*/")
     dic = {}
-    for d in dirs:
+    for index, d in enumerate(dirs):
         print(d)
+        print(datetime.datetime.now(), " : ", index, "/", len(dirs))
         if cd.included_full_files(d) == False:
             continue
         # make bonds

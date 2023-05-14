@@ -27,7 +27,7 @@ verlet_skin = 0.5
 ####    INPUT / OUTPUT    ####
 ##############################
 topology = ../input/results/oxdna_random_6/L1/d-3-7-11/L1_d-3-7-11_2023-01-28-210807/L1_d-3-7-11_2023-01-28-210807/generated_L1_d-3-7-11_2023-01-28-210807.top
-conf_file = ../input/results/oxdna_random_6/L1/d-3-7-11/L1_d-3-7-11_2023-01-28-210807/L1_d-3-7-11_2023-01-28-210807/generated_L1_d-3-7-11_2023-01-28-210807.top
+conf_file = ../input/results/oxdna_random_6/L1/d-3-7-11/L1_d-3-7-11_2023-01-28-210807/L1_d-3-7-11_2023-01-28-210807/generated_L1_d-3-7-11_2023-01-28-210807.dat
 lastconf_file = ../input/results/oxdna_random_6/L1/d-3-7-11/L1_d-3-7-11_2023-01-28-210807/L1_d-3-7-11_2023-01-28-210807/last_conf_L1_d-3-7-11_2023-01-28-210807.dat.dat
 trajectory_file = ../input/results/oxdna_random_6/L1/d-3-7-11/L1_d-3-7-11_2023-01-28-210807/L1_d-3-7-11_2023-01-28-210807/trajectory_L1_d-3-7-11_2023-01-28-210807.dat
 refresh_vel = 1

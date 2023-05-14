@@ -887,7 +887,7 @@ class System(object):
         self._N_strands = 0
         self._strands = []
         self._nucleotide_to_strand = []
-        self._N_cells = np.array(np.floor (self._box / 3.), np.int)
+        self._N_cells = np.array(np.floor (self._box / 3.), dtype=np.int64)
         for kk in [0, 1, 2]:
             if self._N_cells[kk] > 100:
                 self._N_cells[kk] = 100

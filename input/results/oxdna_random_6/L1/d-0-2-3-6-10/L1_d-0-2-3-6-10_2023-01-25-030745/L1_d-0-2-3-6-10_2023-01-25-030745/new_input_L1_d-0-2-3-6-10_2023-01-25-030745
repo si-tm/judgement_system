@@ -27,8 +27,8 @@ verlet_skin = 0.5
 ####    INPUT / OUTPUT    ####
 ##############################
 topology = ../input/results/oxdna_random_6/L1/d-0-2-3-6-10/L1_d-0-2-3-6-10_2023-01-25-030745/L1_d-0-2-3-6-10_2023-01-25-030745/generated_L1_d-0-2-3-6-10_2023-01-25-030745.top
-conf_file = ../input/results/oxdna_random_6/L1/d-0-2-3-6-10/L1_d-0-2-3-6-10_2023-01-25-030745/L1_d-0-2-3-6-10_2023-01-25-030745/generated_L1_d-0-2-3-6-10_2023-01-25-030745.top
-lastconf_file = ../input/results/oxdna_random_6/L1/d-0-2-3-6-10/L1_d-0-2-3-6-10_2023-01-25-030745/L1_d-0-2-3-6-10_2023-01-25-030745/last_conf_L1_d-0-2-3-6-10_2023-01-25-030745.dat.dat.rxyz
+conf_file = ../input/results/oxdna_random_6/L1/d-0-2-3-6-10/L1_d-0-2-3-6-10_2023-01-25-030745/L1_d-0-2-3-6-10_2023-01-25-030745/generated_L1_d-0-2-3-6-10_2023-01-25-030745.dat
+lastconf_file = ../input/results/oxdna_random_6/L1/d-0-2-3-6-10/L1_d-0-2-3-6-10_2023-01-25-030745/L1_d-0-2-3-6-10_2023-01-25-030745/last_conf_L1_d-0-2-3-6-10_2023-01-25-030745.dat.dat
 trajectory_file = ../input/results/oxdna_random_6/L1/d-0-2-3-6-10/L1_d-0-2-3-6-10_2023-01-25-030745/L1_d-0-2-3-6-10_2023-01-25-030745/trajectory_L1_d-0-2-3-6-10_2023-01-25-030745.dat
 refresh_vel = 1
 log_file = ../input/results/oxdna_random_6/L1/d-0-2-3-6-10/L1_d-0-2-3-6-10_2023-01-25-030745/L1_d-0-2-3-6-10_2023-01-25-030745/log_L1_d-0-2-3-6-10_2023-01-25-030745.dat

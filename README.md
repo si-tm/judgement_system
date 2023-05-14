@@ -14,8 +14,13 @@
 
     - pkl get mean and deviation
     ```
-    python make_data.py [path] [type_of_path]
-    python make_data.py ../input/results/oxdna_random_6 L1
+    python make_data.py [path] [type_of_path] [version]
+    python make_data.py ../input/results/oxdna_random_6 L1 4
+    ```
+
+    - from pkl to npy
+    ```
+    python make_xy.py
     ```
 
 2. train and save model of neural network

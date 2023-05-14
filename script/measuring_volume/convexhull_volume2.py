@@ -38,6 +38,7 @@ def plot_points(points):
     hull = ConvexHull(points)
 
     fig = plt.figure()
+
     ax = fig.add_subplot(111, projection="3d")
 
     # Plot defining corner points
@@ -48,6 +49,8 @@ def plot_points(points):
     for s in hull.simplices:
         s = np.append(s, s[0])  # Here we cycle back to the first coordinate
         ax.plot(points[s, 0], points[s, 1], points[s, 2], "r-")
+        # matplotlib.pyplot.close()
+    plt.close()
 
 
 def convexhull_volume(x, y, z):
@@ -58,7 +61,7 @@ def convexhull_volume(x, y, z):
         
     hull = ConvexHull(points)
 
-    plot_points(points)
+    # plot_points(points)
 
     return hull.volume
 
@@ -78,7 +81,7 @@ def get_particle2r(target_dir):
     path = gtf.get_rxyz(target_dir)
     # is_file = os.path.isfile(path)
     if path:
-        print(f"{path} is a file.")
+        print(f"{path} is exist.")
     else:
         execute_traj2r(target_dir)
         # これが終わったら
@@ -152,10 +155,10 @@ def test():
 
 def main():
     if len(sys.argv) != 2:
-        print("usage : python convexhull_volume.py [target directory name]")
+        print("usage : python convexhull_volume2.py [target directory name]")
     else:
         convexhull_volume_all_strands_meandev(sys.argv[1])
 
 if __name__ == '__main__':
-    test()
-    # main()
+    # test()
+    main()
