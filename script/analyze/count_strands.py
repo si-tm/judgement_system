@@ -2,9 +2,9 @@ import sys
 sys.path.append("common/")
 sys.path.append("measuring_volume/")
 import run_output_bonds as rob
-import get_target_file as gtf
+import common.get_target_file as gtf
 import convexhull_volume as cv
-import get_top_data as gtd
+import measuring_volume.get_top_data as gtd
 
 # strand数の前後を書く．
 def count_strands(target_dir):
@@ -32,6 +32,7 @@ def analyze_strands(target_dir):
 def test():
     # target_dir = "../input/results/oxdna_random_6_diffseq_3/L1/d-0-1/L1_d-0-1_2023-01-30-152202/L1_d-0-1_2023-01-30-152202/"
     target_dir = "../input/results/oxdna_ked_2/seqD/D1/test_d1_200000_1"
+    target_dir = "../input/results/oxdna_random_6_diffseq_2/L1/d-1-4-7-10-14-15/L1_d-1-4-7-10-14-15_2023-02-01-020045/L1_d-1-4-7-10-14-15_2023-02-01-020045/"
     before, after = count_strands(target_dir)
     print(before, after)
     analyze_strands(target_dir)

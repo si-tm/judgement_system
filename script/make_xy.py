@@ -216,11 +216,11 @@ def test():
     # print(load_npy("../data/npy/x_random_l1_6_dv.npy"))
     # print(load_npy("../data/npy/y_random_l1_6_dv.npy"))
 
-    dirs_random_l1 =  lr.load_random_dir("oxdna_random_6", "L2")
-    seq_csv_path = "../input/input_seq_L2.csv"
-    make_xy_ratioB(dirs_random_l1, "random_l2_6", seq_csv_path)
-    print(load_npy("../data/npy/x_random_l2_6_dv.npy"))
-    print(load_npy("../data/npy/y_random_l2_6_dv.npy"))
+    # dirs_random_l1 =  lr.load_random_dir("oxdna_random_6", "L2")
+    # seq_csv_path = "../input/input_seq_L2.csv"
+    # make_xy_ratioB(dirs_random_l1, "random_l2_6", seq_csv_path)
+    # print(load_npy("../data/npy/x_random_l2_6_dv.npy"))
+    # print(load_npy("../data/npy/y_random_l2_6_dv.npy"))
 
     # dirs_random_l1 =  lr.load_random_dir("oxdna_random_6", "L3")
     # seq_csv_path = "../input/input_seq_L3.csv"
