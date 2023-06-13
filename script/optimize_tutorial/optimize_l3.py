@@ -40,7 +40,7 @@ def getModel(path="../../saved_model/l1_ave_230530"):
 
 def set_eval(ind, averageModel, deviationModel, scale=10.0):
     # X, Y = getXY()
-    print(len(ind))
+    # print(len(ind))
     
     indexes = np.array(ind[:-1]) > ind[-1]
     strands = [1 if a else 0 for a in indexes]
@@ -57,12 +57,12 @@ def run_qdpy(dirpath="test"):
     #評価結果を配置するgridを作成。
     #L1に対して
     grid = containers.Grid(
-        # shape=(16,16), 
-        shape=(256, 256), 
+        shape=(16,16), 
+        # shape=(256, 256), 
         max_items_per_bin=1, 
         fitness_domain=((0.0, 1.),), #評価関数が返す値の範囲 average 
         #評価関数はどんな関数でもいいが、返すデータ型は"fitness"と(特徴1,特徴2)という形 
-        features_domain=((0., 1.), (1, 16))) #軸 deviation, number of strands 
+        features_domain=((0., 1.), (1, 1728))) #軸 deviation, number of strands 
     
     #配置アルゴリズムを指定。今回はエネルギーが小さいほど高評価なので、minimization。
     #??

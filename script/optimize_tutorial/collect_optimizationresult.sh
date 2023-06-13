@@ -2,12 +2,12 @@
 # # !/bin/zsh
 path="script/optimize_tutorial/"
 file_LIST=(
-    activityGrid.pdf
-    evals_contsize.pdf
-    evals_fitnessmax0.pdf
-    final.p
-    iterations_nbupdated.pdf
-    performancesGrid.pdf
+    "activityGrid.pdf"     
+    "evals_contsize.pdf"     
+    "evals_fitnessmax0.pdf"    
+    "final.p"   
+    "iterations_nbupdated.pdf"    
+    "performancesGrid.pdf"
 )
 DATE=`/bin/date '+%Y%m%d%H%M%S'`
 dir="optimizationresults_$DATE"
@@ -17,6 +17,8 @@ dir="optimizationresults_$DATE"
 # echo $dir
 
 /bin/mkdir $dir
+
+# echo $file_LIST
 
 for f in $file_LIST
 do 
