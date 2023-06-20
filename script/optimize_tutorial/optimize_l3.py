@@ -38,7 +38,7 @@ def getModel(path="../../saved_model/l1_ave_230530"):
     return model
 
 
-def set_eval(ind, averageModel, deviationModel, scale=10.0):
+def set_eval(ind, averageModel, deviationModel, scale=40.0):
     # X, Y = getXY()
     # print(len(ind))
     
