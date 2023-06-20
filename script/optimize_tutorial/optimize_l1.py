@@ -60,9 +60,8 @@ def set_eval(ind, averageModel, deviationModel, scale=10.0):
     indexes = np.array(ind[:-1]) > ind[-1]
     strands = [1 if a else 0 for a in indexes]
     score = 2*math.atan(averageModel.predict([strands], verbose = 0)[0]/scale)/math.pi
-    # fit0 = ind[-1]#deviationModel.predict([strands])[0,0]
+    fit0 = ind[-1]#deviationModel.predict([strands])[0,0]
     # fit0 = 2*math.atan(deviationModel.predict([strands], verbose = 0)[0,0]/scale)/math.pi
-    fit0 = 2*math.atan(deviationModel.predict([strands], verbose = 0)[0,0]/scale)/math.pi
     # print(fit0)
     fit1 = np.sum(indexes)
     features = (fit0, fit1)
@@ -79,7 +78,8 @@ def run_qdpy(dirpath="test"):
         max_items_per_bin=1, 
         fitness_domain=((0.0, 1.),), #評価関数が返す値の範囲 average 
         #評価関数はどんな関数でもいいが、返すデータ型は"fitness"と(特徴1,特徴2)という形 
-        features_domain=((0., 1.), (1, 16))) #軸 deviation, number of strands 
+        # features_domain=((0., 1.), (1, 16))) #軸 deviation, number of strands 
+        features_domain=((0., 1.), (2, 5))) #軸 deviation, number of strands 
     
     #配置アルゴリズムを指定。今回はエネルギーが小さいほど高評価なので、minimization。
     #??
