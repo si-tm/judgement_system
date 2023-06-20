@@ -29,8 +29,25 @@ from sklearn.model_selection import train_test_split
 from datetime import datetime
 import numpy as np
 from sklearn.preprocessing import Normalizer
+from sklearn.ensemble import GradientBoostingRegressor
+
 
 import functools
+
+def getGBR():
+    x_l3_dv_fullPath = os.path.abspath('../../data/npy/x_random_l3_6_dv.npy')
+    x_l3_dv_path = tf.keras.utils.get_file('x_random_l3_6_mean.npy', 'file://'+x_l3_dv_fullPath)
+
+    y_l3_dv_fullPath = os.path.abspath('../../data/npy/y_random_l3_6_dv.npy')
+    y_l3_dv_path = tf.keras.utils.get_file('y_random_l3_6_dv.npy', 'file://'+y_l3_dv_fullPath)
+
+    x_data = np.load(x_l3_dv_path)
+    y_data = np.load(y_l3_dv_path, allow_pickle=True)
+
+    x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size=0.2)
+    est = GradientBoostingRegressor().fit(x_train, y_train)
+
+    return est
 
 
 def getModel(path="../../saved_model/l1_ave_230530"):
@@ -46,7 +63,8 @@ def set_eval(ind, averageModel, deviationModel, scale=40.0):
     strands = [1 if a else 0 for a in indexes]
     score = 2*math.atan(averageModel.predict([strands], verbose = 0)[0]/scale)/math.pi
     # fit0 = ind[-1]#deviationModel.predict([strands])[0,0]
-    fit0 = 2*math.atan(deviationModel.predict([strands], verbose = 0)[0,0]/scale)/math.pi
+    # fit0 = 2*math.atan(deviationModel.predict([strands], verbose = 0)[0,0]/scale)/math.pi # this neural network
+    fit0 = 2*math.atan(deviationModel.predict([strands])[0]/scale)/math.pi # this GradientBoostingRegressor
     fit1 = np.sum(indexes)
     features = (fit0, fit1)
     return (score,), features
@@ -85,7 +103,8 @@ def run_qdpy(dirpath="test"):
     # Run illumination process !
     #配置を実行する。
     averageModel = getModel('../../saved_model/l3_ave_230613')
-    deviationModel = getModel('../../saved_model/l3_dev_230613')
+    # deviationModel = getModel('../../saved_model/l3_dev_230613')
+    deviationModel = getGBR()
     eval_fn = functools.partial(set_eval,averageModel=averageModel,deviationModel=deviationModel)
     best = algo.optimise(eval_fn)
     print(algo.summary())
@@ -116,6 +135,8 @@ def main():
     # x_data, y_data = getXY()
     # 1728
     # print(len(x_data[0]))
+    # model = getGBR()
+    # print(model.predict([x_data[0]])[0])
 
 
     
