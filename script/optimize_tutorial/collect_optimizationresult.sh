@@ -18,9 +18,9 @@ dir="optimizationresults_$DATE"
 
 /bin/mkdir $dir
 
-# echo $file_LIST
+# echo ${file_LIST[@]}
 
-for f in $file_LIST
+for f in ${file_LIST[@]}
 do 
     echo $dir"/"$f
     /bin/mv $f $dir"/"$f
