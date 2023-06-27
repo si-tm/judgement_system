@@ -81,7 +81,8 @@ def run_qdpy(dirpath="test"):
         max_items_per_bin=1, 
         fitness_domain=((0.0, 1.),), #評価関数が返す値の範囲 average 
         #評価関数はどんな関数でもいいが、返すデータ型は"fitness"と(特徴1,特徴2)という形 
-        features_domain=((0., 1.), (1, 1728))) #軸 deviation, number of strands 
+        # features_domain=((0., 1.), (1, 1728))) #軸 deviation, number of strands 
+        features_domain=((0., 1.), (3, 6))) #軸 deviation, number of strands 
     
     #配置アルゴリズムを指定。今回はエネルギーが小さいほど高評価なので、minimization。
     #??
