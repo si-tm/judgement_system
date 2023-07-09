@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/GraftedInteraction.pdb"
-  "../../../contrib/rovigatti/GraftedInteraction.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/GraftedInteraction.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/GraftedInteraction.so"
   "CMakeFiles/GraftedInteraction.dir/src/Interactions/GraftedInteraction.cpp.o"
   "CMakeFiles/GraftedInteraction.dir/src/Interactions/GraftedInteraction.cpp.o.d"
   "CMakeFiles/GraftedInteraction.dir/src/Interactions/TSPInteraction.cpp.o"

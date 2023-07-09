@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/ChargedCylInteraction.dylib"
-  "../../../contrib/romano/ChargedCylInteraction.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/ChargedCylInteraction.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/ChargedCylInteraction.pdb"
   "CMakeFiles/ChargedCylInteraction.dir/__/__/src/Particles/SpheroCylinder.cpp.o"
   "CMakeFiles/ChargedCylInteraction.dir/__/__/src/Particles/SpheroCylinder.cpp.o.d"
   "CMakeFiles/ChargedCylInteraction.dir/src/Interactions/ChargedCylInteraction.cpp.o"

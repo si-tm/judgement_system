@@ -8,11 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/maya/OneDrive - お茶の水女子大学/lab/judgement_system/script/contrib/randisi/src/Interactions/DNA2ModInteraction.cpp" "contrib/randisi/CMakeFiles/DNA2ModInteraction.dir/src/Interactions/DNA2ModInteraction.cpp.o" "gcc" "contrib/randisi/CMakeFiles/DNA2ModInteraction.dir/src/Interactions/DNA2ModInteraction.cpp.o.d"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/randisi/src/Interactions/DNA2ModInteraction.cpp" "contrib/randisi/CMakeFiles/DNA2ModInteraction.dir/src/Interactions/DNA2ModInteraction.cpp.o" "gcc" "contrib/randisi/CMakeFiles/DNA2ModInteraction.dir/src/Interactions/DNA2ModInteraction.cpp.o.d"
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

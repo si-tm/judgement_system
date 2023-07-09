@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/Widom.pdb"
-  "../../../contrib/rovigatti/Widom.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/Widom.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/Widom.so"
   "CMakeFiles/Widom.dir/src/Observables/Widom.cpp.o"
   "CMakeFiles/Widom.dir/src/Observables/Widom.cpp.o.d"
 )

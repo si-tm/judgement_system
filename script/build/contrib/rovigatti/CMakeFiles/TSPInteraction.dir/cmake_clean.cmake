@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/TSPInteraction.pdb"
-  "../../../contrib/rovigatti/TSPInteraction.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/TSPInteraction.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/TSPInteraction.so"
   "CMakeFiles/TSPInteraction.dir/src/Interactions/TSPInteraction.cpp.o"
   "CMakeFiles/TSPInteraction.dir/src/Interactions/TSPInteraction.cpp.o.d"
 )

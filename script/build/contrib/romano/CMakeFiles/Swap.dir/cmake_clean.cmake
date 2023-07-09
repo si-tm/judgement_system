@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/Swap.dylib"
-  "../../../contrib/romano/Swap.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/Swap.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/Swap.pdb"
   "CMakeFiles/Swap.dir/src/Backends/MCMoves/Swap.cpp.o"
   "CMakeFiles/Swap.dir/src/Backends/MCMoves/Swap.cpp.o.d"
 )

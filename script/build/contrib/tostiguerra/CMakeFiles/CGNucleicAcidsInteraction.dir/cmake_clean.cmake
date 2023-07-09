@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/tostiguerra/CGNucleicAcidsInteraction.pdb"
-  "../../../contrib/tostiguerra/CGNucleicAcidsInteraction.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/tostiguerra/CGNucleicAcidsInteraction.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/tostiguerra/CGNucleicAcidsInteraction.so"
   "CMakeFiles/CGNucleicAcidsInteraction.dir/src/CGNucleicAcidsInteraction.cpp.o"
   "CMakeFiles/CGNucleicAcidsInteraction.dir/src/CGNucleicAcidsInteraction.cpp.o.d"
 )

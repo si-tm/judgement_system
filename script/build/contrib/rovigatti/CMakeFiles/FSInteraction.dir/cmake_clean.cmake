@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/FSInteraction.pdb"
-  "../../../contrib/rovigatti/FSInteraction.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/FSInteraction.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/FSInteraction.so"
   "CMakeFiles/FSInteraction.dir/src/Interactions/FSInteraction.cpp.o"
   "CMakeFiles/FSInteraction.dir/src/Interactions/FSInteraction.cpp.o.d"
 )

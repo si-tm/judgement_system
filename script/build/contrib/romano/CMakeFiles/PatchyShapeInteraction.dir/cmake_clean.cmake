@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/PatchyShapeInteraction.dylib"
-  "../../../contrib/romano/PatchyShapeInteraction.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/PatchyShapeInteraction.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/PatchyShapeInteraction.pdb"
   "CMakeFiles/PatchyShapeInteraction.dir/src/Interactions/PatchyShapeInteraction.cpp.o"
   "CMakeFiles/PatchyShapeInteraction.dir/src/Interactions/PatchyShapeInteraction.cpp.o.d"
   "CMakeFiles/PatchyShapeInteraction.dir/src/Particles/PatchyShapeParticle.cpp.o"

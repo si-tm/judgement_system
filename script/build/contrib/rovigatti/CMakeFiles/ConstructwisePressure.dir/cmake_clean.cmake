@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/ConstructwisePressure.pdb"
-  "../../../contrib/rovigatti/ConstructwisePressure.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/ConstructwisePressure.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/ConstructwisePressure.so"
   "CMakeFiles/ConstructwisePressure.dir/src/Interactions/PolymerSwapInteraction.cpp.o"
   "CMakeFiles/ConstructwisePressure.dir/src/Interactions/PolymerSwapInteraction.cpp.o.d"
   "CMakeFiles/ConstructwisePressure.dir/src/Observables/ConstructwisePressure.cpp.o"

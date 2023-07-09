@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/HardIcoInteraction.dylib"
-  "../../../contrib/romano/HardIcoInteraction.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/HardIcoInteraction.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/HardIcoInteraction.pdb"
   "CMakeFiles/HardIcoInteraction.dir/src/Interactions/HardIcoInteraction.cpp.o"
   "CMakeFiles/HardIcoInteraction.dir/src/Interactions/HardIcoInteraction.cpp.o.d"
   "CMakeFiles/HardIcoInteraction.dir/src/Particles/Icosahedron.cpp.o"

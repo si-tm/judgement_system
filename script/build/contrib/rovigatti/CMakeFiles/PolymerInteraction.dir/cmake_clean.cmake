@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/PolymerInteraction.pdb"
-  "../../../contrib/rovigatti/PolymerInteraction.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/PolymerInteraction.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/PolymerInteraction.so"
   "CMakeFiles/PolymerInteraction.dir/src/Interactions/PolymerInteraction.cpp.o"
   "CMakeFiles/PolymerInteraction.dir/src/Interactions/PolymerInteraction.cpp.o.d"
   "CMakeFiles/PolymerInteraction.dir/src/Interactions/TSPInteraction.cpp.o"

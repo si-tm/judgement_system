@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/GenericGrByInsertion.pdb"
-  "../../../contrib/rovigatti/GenericGrByInsertion.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/GenericGrByInsertion.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/GenericGrByInsertion.so"
   "CMakeFiles/GenericGrByInsertion.dir/src/Observables/GenericGrByInsertion.cpp.o"
   "CMakeFiles/GenericGrByInsertion.dir/src/Observables/GenericGrByInsertion.cpp.o.d"
 )

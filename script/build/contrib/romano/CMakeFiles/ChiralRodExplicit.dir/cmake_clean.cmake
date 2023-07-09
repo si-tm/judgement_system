@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/ChiralRodExplicit.dylib"
-  "../../../contrib/romano/ChiralRodExplicit.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/ChiralRodExplicit.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/ChiralRodExplicit.pdb"
   "CMakeFiles/ChiralRodExplicit.dir/__/__/src/Particles/SpheroCylinder.cpp.o"
   "CMakeFiles/ChiralRodExplicit.dir/__/__/src/Particles/SpheroCylinder.cpp.o.d"
   "CMakeFiles/ChiralRodExplicit.dir/src/Interactions/ChiralRodExplicit.cpp.o"

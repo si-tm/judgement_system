@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/Swim.dylib"
-  "../../../contrib/romano/Swim.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/Swim.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/Swim.pdb"
   "CMakeFiles/Swim.dir/src/Backends/MCMoves/Swim.cpp.o"
   "CMakeFiles/Swim.dir/src/Backends/MCMoves/Swim.cpp.o.d"
 )

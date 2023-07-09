@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/Bonds.pdb"
-  "../../../contrib/rovigatti/Bonds.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/Bonds.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/Bonds.so"
   "CMakeFiles/Bonds.dir/src/Interactions/DetailedPolymerSwapInteraction.cpp.o"
   "CMakeFiles/Bonds.dir/src/Interactions/DetailedPolymerSwapInteraction.cpp.o.d"
   "CMakeFiles/Bonds.dir/src/Observables/Bonds.cpp.o"

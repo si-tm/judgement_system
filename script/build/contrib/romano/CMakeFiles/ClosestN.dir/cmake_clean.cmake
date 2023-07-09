@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/ClosestN.dylib"
-  "../../../contrib/romano/ClosestN.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/ClosestN.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/ClosestN.pdb"
   "CMakeFiles/ClosestN.dir/src/Observables/ClosestN.cpp.o"
   "CMakeFiles/ClosestN.dir/src/Observables/ClosestN.cpp.o.d"
 )

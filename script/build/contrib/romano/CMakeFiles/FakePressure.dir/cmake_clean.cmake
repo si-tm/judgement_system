@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/FakePressure.dylib"
-  "../../../contrib/romano/FakePressure.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/FakePressure.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/FakePressure.pdb"
   "CMakeFiles/FakePressure.dir/src/Observables/FakePressure.cpp.o"
   "CMakeFiles/FakePressure.dir/src/Observables/FakePressure.cpp.o.d"
 )

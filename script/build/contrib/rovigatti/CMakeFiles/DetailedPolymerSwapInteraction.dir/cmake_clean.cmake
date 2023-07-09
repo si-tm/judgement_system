@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/DetailedPolymerSwapInteraction.pdb"
-  "../../../contrib/rovigatti/DetailedPolymerSwapInteraction.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/DetailedPolymerSwapInteraction.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/DetailedPolymerSwapInteraction.so"
   "CMakeFiles/DetailedPolymerSwapInteraction.dir/src/Interactions/DetailedPolymerSwapInteraction.cpp.o"
   "CMakeFiles/DetailedPolymerSwapInteraction.dir/src/Interactions/DetailedPolymerSwapInteraction.cpp.o.d"
 )

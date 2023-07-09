@@ -1,35 +1,77 @@
 import pickle
 import numpy as np
-from qdpy import algorithms, containers, benchmarks, plots
-from qdpy.base import *
+import csv
 
 # final.pからスコアの高いindを取り出す
 
-def Ind2strand(ind):
+def make_req(type_of_l, filename, lst):
+    temp_f = open("../../input/template_seq/requirement_" + type_of_l + ".txt", "r")
+    new_f = open("r20230613053101/req_" + filename + ".txt", "w") # ここ変える
+    tmp_theme = ""
+    for temp_l in temp_f:
+        if temp_l[0] == '#':
+            tmp_theme = temp_l[:-1]
+            if temp_l[:-1] == "# structure":
+                new_f.write("# structure\n")
+                new_f.write("number_of_types = " + str(len(lst)) + "\n")
+                for l in lst:
+                    new_f.write(l + "\n")
+
+        if "# structure" == tmp_theme:
+            pass
+        else:
+            new_f.write(temp_l[:-1] + "\n")
+            
+
+def req(comp):
+    new_comp = []
+    for i, c in enumerate(comp):
+        new_comp.append("s" + str(i) + " = " + c + " @initial 1.0 M")
+    return new_comp
+
+def Ind2complexes(lst, type_of_l):
+    f = open("../../input/structure_seq/input_seq_" + type_of_l + ".csv", "r")
+    r = csv.reader(f)
+
+    comp = []
+
+    seq_lst = []
+    for l in r:
+        for e in l:
+            seq_lst.append(e)
+    
+    for i, e in enumerate(lst):
+        if e == 1:
+            # print(seq_lst[i])
+            comp.append(seq_lst[i])
+    
+    return comp
+
+def Ind2lst(ind):
     indexes = np.array(ind[:-1]) > ind[-1]
     strands = [1 if a else 0 for a in indexes]
     return strands
 
 
 # https://gitlab.com/leo.cazenille/qdpy/-/blob/master/qdpy/containers.py
-def readFinal(path):
+def readFinal(path, type_of_l):
     with open(path, "rb") as f:
         data = pickle.load(f)
     # ``data`` is now a dictionary containing all results, including the final container, all solutions, the algorithm parameters, etc.
     grid = data['container']
-    # print(grid)
-    for ind in grid.best:
-        if ind > 0.9:
-            pass
-    
-    lst = Ind2strand(grid.best)
-    print(lst)
-    print(grid.best.fitness)
-    print(grid.best.features)
+    for ind in grid:
+        if ind.features[1] <= 6: # ここ変える
+            lst = Ind2lst(ind)
+            comp = Ind2complexes(lst, type_of_l)
+            comp = req(comp)
+            make_req(type_of_l="L2", filename=ind.name, lst=comp) # ここ変える
+
+            # print(ind.fitness)
+            # print(ind.features)
 
 def test():
-    path="optimizationresults_20230620023641/final.p"
-    readFinal(path)
+    path="optimizationresults_20230613053101/final.p" # ここ変える
+    readFinal(path, "L2") # ここ変える
 
 if __name__ == '__main__':
     test()

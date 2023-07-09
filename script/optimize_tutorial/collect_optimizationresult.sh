@@ -10,7 +10,8 @@ file_LIST=(
     "performancesGrid.pdf"
 )
 DATE=`/bin/date '+%Y%m%d%H%M%S'`
-dir="optimizationresults_$DATE"
+dir="results/"
+dir+="optimizationresults_$DATE"
 
 # echo $file_LIST
 # echo $DATE
@@ -24,4 +25,5 @@ for f in ${file_LIST[@]}
 do 
     echo $dir"/"$f
     /bin/mv $f $dir"/"$f
+    echo $dir"/"$f
 done

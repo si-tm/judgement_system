@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/ChiralRodInteraction.dylib"
-  "../../../contrib/romano/ChiralRodInteraction.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/ChiralRodInteraction.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/ChiralRodInteraction.pdb"
   "CMakeFiles/ChiralRodInteraction.dir/__/__/src/Particles/SpheroCylinder.cpp.o"
   "CMakeFiles/ChiralRodInteraction.dir/__/__/src/Particles/SpheroCylinder.cpp.o.d"
   "CMakeFiles/ChiralRodInteraction.dir/src/Interactions/ChiralRodInteraction.cpp.o"

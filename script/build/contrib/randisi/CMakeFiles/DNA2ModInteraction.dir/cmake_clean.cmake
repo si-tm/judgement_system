@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/randisi/DNA2ModInteraction.dylib"
-  "../../../contrib/randisi/DNA2ModInteraction.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/randisi/DNA2ModInteraction.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/randisi/DNA2ModInteraction.pdb"
   "CMakeFiles/DNA2ModInteraction.dir/src/Interactions/DNA2ModInteraction.cpp.o"
   "CMakeFiles/DNA2ModInteraction.dir/src/Interactions/DNA2ModInteraction.cpp.o.d"
 )

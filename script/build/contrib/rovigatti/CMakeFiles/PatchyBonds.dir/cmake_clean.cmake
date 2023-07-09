@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/PatchyBonds.pdb"
-  "../../../contrib/rovigatti/PatchyBonds.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/PatchyBonds.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/PatchyBonds.so"
   "CMakeFiles/PatchyBonds.dir/src/Observables/PatchyBonds.cpp.o"
   "CMakeFiles/PatchyBonds.dir/src/Observables/PatchyBonds.cpp.o.d"
 )

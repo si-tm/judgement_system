@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/PatchyShapeParticle.dylib"
-  "../../../contrib/romano/PatchyShapeParticle.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/PatchyShapeParticle.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/PatchyShapeParticle.pdb"
   "CMakeFiles/PatchyShapeParticle.dir/src/Particles/PatchyShapeParticle.cpp.o"
   "CMakeFiles/PatchyShapeParticle.dir/src/Particles/PatchyShapeParticle.cpp.o.d"
 )

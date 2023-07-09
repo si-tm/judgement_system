@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/CPAnalysis.pdb"
-  "../../../contrib/rovigatti/CPAnalysis.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/CPAnalysis.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/CPAnalysis.so"
   "CMakeFiles/CPAnalysis.dir/src/Observables/CPAnalysis.cpp.o"
   "CMakeFiles/CPAnalysis.dir/src/Observables/CPAnalysis.cpp.o.d"
 )

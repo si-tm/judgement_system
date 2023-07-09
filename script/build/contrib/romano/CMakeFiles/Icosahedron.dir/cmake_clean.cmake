@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/Icosahedron.dylib"
-  "../../../contrib/romano/Icosahedron.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/Icosahedron.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/Icosahedron.pdb"
   "CMakeFiles/Icosahedron.dir/src/Particles/Icosahedron.cpp.o"
   "CMakeFiles/Icosahedron.dir/src/Particles/Icosahedron.cpp.o.d"
 )

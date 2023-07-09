@@ -1,4 +1,4 @@
-# Install script for directory: /Users/maya/OneDrive - お茶の水女子大学/lab/judgement_system/script/contrib/romano
+# Install script for directory: /Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,6 +34,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
 endif()
 

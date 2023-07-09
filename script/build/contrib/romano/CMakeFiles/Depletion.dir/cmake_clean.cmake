@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/Depletion.dylib"
-  "../../../contrib/romano/Depletion.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/Depletion.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/Depletion.pdb"
   "CMakeFiles/Depletion.dir/src/Backends/MCMoves/Depletion.cpp.o"
   "CMakeFiles/Depletion.dir/src/Backends/MCMoves/Depletion.cpp.o.d"
 )

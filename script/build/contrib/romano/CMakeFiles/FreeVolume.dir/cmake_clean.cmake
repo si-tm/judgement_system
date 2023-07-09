@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/FreeVolume.dylib"
-  "../../../contrib/romano/FreeVolume.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/FreeVolume.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/FreeVolume.pdb"
   "CMakeFiles/FreeVolume.dir/src/Observables/FreeVolume.cpp.o"
   "CMakeFiles/FreeVolume.dir/src/Observables/FreeVolume.cpp.o.d"
 )

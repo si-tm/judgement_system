@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/DensityPressureProfile.pdb"
-  "../../../contrib/rovigatti/DensityPressureProfile.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/DensityPressureProfile.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/DensityPressureProfile.so"
   "CMakeFiles/DensityPressureProfile.dir/src/Observables/DensityPressureProfile.cpp.o"
   "CMakeFiles/DensityPressureProfile.dir/src/Observables/DensityPressureProfile.cpp.o.d"
 )

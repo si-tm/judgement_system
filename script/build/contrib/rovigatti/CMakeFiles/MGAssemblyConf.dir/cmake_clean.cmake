@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/MGAssemblyConf.pdb"
-  "../../../contrib/rovigatti/MGAssemblyConf.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/MGAssemblyConf.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/MGAssemblyConf.so"
   "CMakeFiles/MGAssemblyConf.dir/src/Interactions/FSInteraction.cpp.o"
   "CMakeFiles/MGAssemblyConf.dir/src/Interactions/FSInteraction.cpp.o.d"
   "CMakeFiles/MGAssemblyConf.dir/src/Observables/MGAssemblyConf.cpp.o"

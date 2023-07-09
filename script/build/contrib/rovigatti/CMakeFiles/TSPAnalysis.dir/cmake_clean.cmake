@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/TSPAnalysis.pdb"
-  "../../../contrib/rovigatti/TSPAnalysis.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/TSPAnalysis.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/TSPAnalysis.so"
   "CMakeFiles/TSPAnalysis.dir/src/Observables/TSPAnalysis.cpp.o"
   "CMakeFiles/TSPAnalysis.dir/src/Observables/TSPAnalysis.cpp.o.d"
 )

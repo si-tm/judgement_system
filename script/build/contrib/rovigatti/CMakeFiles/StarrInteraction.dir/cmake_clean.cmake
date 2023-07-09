@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/StarrInteraction.pdb"
-  "../../../contrib/rovigatti/StarrInteraction.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/StarrInteraction.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/StarrInteraction.so"
   "CMakeFiles/StarrInteraction.dir/src/Interactions/StarrInteraction.cpp.o"
   "CMakeFiles/StarrInteraction.dir/src/Interactions/StarrInteraction.cpp.o.d"
 )

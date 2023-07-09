@@ -24,12 +24,12 @@ def make_bonds_file():
 		print('Usage %s input_file trajectory_file topology_file [confid]' % sys.argv[0])
 		sys.exit()
 
-
 	confid = 0
 	#now get topology file name:
 	inputfile = sys.argv[1]
 	conffile = sys.argv[2]
 	topologyfile = sys.argv[3]
+	# print("debug", inputfile, conffile, topologyfile)
 	if len(sys.argv) >= 5:
 		confid = int(sys.argv[4])
 
@@ -38,9 +38,8 @@ def make_bonds_file():
 	# for line in fin:
 	#     line = line.lstrip()
 	#     if not line.startswith('#'):
-	#         if "topology" in line:
-	#             topologyfile = line.split('=')[1].replace(' ','').replace('\n','')
-
+	# 	    if "topology" in line:
+	# 		    topologyfile = line.split('=')[1].replace(' ','').replace('\n','')
 	myreader = readers.LorenzoReader(conffile,topologyfile)
 	mysystem = myreader.get_system()
 
@@ -55,30 +54,30 @@ def make_bonds_file():
 	tempfile_obj = tempfile.NamedTemporaryFile()
 	launchcommand = inputfile + ' trajectory_file='+tempfile_obj.name+' '+command_for_data
 
-	launchargs = [PROCESSPROGRAM,inputfile ,'trajectory_file='+tempfile_obj.name,command_for_data]
+	launchargs = [PROCESSPROGRAM, inputfile ,'trajectory_file='+tempfile_obj.name,command_for_data]
+	# launchargs = [PROCESSPROGRAM,"-v", inputfile ,'trajectory_file='+tempfile_obj.name,command_for_data]
 	#print command_for_data
 	#launchargs = [PROCESSPROGRAM,inputfile ,'trajectory_file='+conffile,command_for_data]
 
 	bonds_file_name = "/".join(inputfile.split("/")[:-1]) + "/" + "bonds"
-	print(bonds_file_name)
 	bonds_file = open(bonds_file_name, 'w')
 
 	while mysystem != False:
 		mysystem.map_nucleotides_to_strands()
 		mysystem.print_lorenzo_output(tempfile_obj.name,'/dev/null')
 		tempfile_obj.flush()
-		#launchcommand = 'trajectory_file='+tempfile_obj.name+' '+command_for_data
-		#os.system(PROCESSPROGRAM+' '+launchcommand)
-		#launchargs = [PROCESSPROGRAM,launchcommand]
+
+		# print("mysystem : ", mysystem._conf)
+		# launchcommand = 'trajectory_file='+tempfile_obj.name+' '+command_for_data
+		# os.system(PROCESSPROGRAM+' '+launchcommand)
+		# launchargs = [PROCESSPROGRAM,launchcommand]
 		if counter == confid:
 			myinput = subprocess.Popen(launchargs,stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 			mystdout,mystderr = myinput.communicate()
-			print(sys.stderr, mystderr)
-			# print(sys.stdout, mystdout)
 			str_mystdout = mystdout.decode("utf-8")
+			str_mystderr = mystderr.decode("utf-8")
+			
 			bonds_file.write(str_mystdout)
-
-			# bonds_file.write(str(mystdout))
 			sys.exit(1)
 		counter += 1
 		mysystem = myreader.get_system()

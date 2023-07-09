@@ -12,6 +12,8 @@ def file_dic(dir_path):
 
     if "random" in dir_path:
         return random_file_dic(dir_path)
+    if "fromQD" in dir_path:
+        return random_file_dic(dir_path)
 
     files = glob.glob(os.path.join(dir_path,"*"))
     

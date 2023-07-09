@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/NematicS.dylib"
-  "../../../contrib/romano/NematicS.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/NematicS.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/NematicS.pdb"
   "CMakeFiles/NematicS.dir/src/Observables/NematicS.cpp.o"
   "CMakeFiles/NematicS.dir/src/Observables/NematicS.cpp.o.d"
 )

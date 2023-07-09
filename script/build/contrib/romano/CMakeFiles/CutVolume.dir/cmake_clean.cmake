@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/CutVolume.dylib"
-  "../../../contrib/romano/CutVolume.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/CutVolume.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/CutVolume.pdb"
   "CMakeFiles/CutVolume.dir/src/Backends/MCMoves/CutVolume.cpp.o"
   "CMakeFiles/CutVolume.dir/src/Backends/MCMoves/CutVolume.cpp.o.d"
 )

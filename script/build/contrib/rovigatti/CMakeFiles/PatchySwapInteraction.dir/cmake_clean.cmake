@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/PatchySwapInteraction.pdb"
-  "../../../contrib/rovigatti/PatchySwapInteraction.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/PatchySwapInteraction.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/PatchySwapInteraction.so"
   "CMakeFiles/PatchySwapInteraction.dir/src/Interactions/PatchySwapInteraction.cpp.o"
   "CMakeFiles/PatchySwapInteraction.dir/src/Interactions/PatchySwapInteraction.cpp.o.d"
 )

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/FSConf.pdb"
-  "../../../contrib/rovigatti/FSConf.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/FSConf.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/FSConf.so"
   "CMakeFiles/FSConf.dir/src/Interactions/FSInteraction.cpp.o"
   "CMakeFiles/FSConf.dir/src/Interactions/FSInteraction.cpp.o.d"
   "CMakeFiles/FSConf.dir/src/Observables/FSConf.cpp.o"

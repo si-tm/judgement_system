@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/LevyDelta.pdb"
-  "../../../contrib/rovigatti/LevyDelta.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/LevyDelta.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/LevyDelta.so"
   "CMakeFiles/LevyDelta.dir/src/Interactions/LevyInteraction.cpp.o"
   "CMakeFiles/LevyDelta.dir/src/Interactions/LevyInteraction.cpp.o.d"
   "CMakeFiles/LevyDelta.dir/src/Observables/LevyDelta.cpp.o"

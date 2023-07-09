@@ -1,4 +1,4 @@
-# Install script for directory: /Users/maya/OneDrive - お茶の水女子大学/lab/judgement_system/script/contrib
+# Install script for directory: /Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,15 +34,15 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/maya/OneDrive - お茶の水女子大学/lab/judgement_system/script/build/contrib/randisi/cmake_install.cmake")
-  include("/Users/maya/OneDrive - お茶の水女子大学/lab/judgement_system/script/build/contrib/romano/cmake_install.cmake")
-  include("/Users/maya/OneDrive - お茶の水女子大学/lab/judgement_system/script/build/contrib/rovigatti/cmake_install.cmake")
-  include("/Users/maya/OneDrive - お茶の水女子大学/lab/judgement_system/script/build/contrib/tostiguerra/cmake_install.cmake")
+  include("/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/build/contrib/randisi/cmake_install.cmake")
+  include("/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/build/contrib/romano/cmake_install.cmake")
+  include("/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/build/contrib/rovigatti/cmake_install.cmake")
+  include("/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/build/contrib/tostiguerra/cmake_install.cmake")
 
 endif()
 

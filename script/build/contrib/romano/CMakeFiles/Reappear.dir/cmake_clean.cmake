@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/Reappear.dylib"
-  "../../../contrib/romano/Reappear.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/Reappear.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/Reappear.pdb"
   "CMakeFiles/Reappear.dir/src/Backends/MCMoves/Reappear.cpp.o"
   "CMakeFiles/Reappear.dir/src/Backends/MCMoves/Reappear.cpp.o.d"
 )

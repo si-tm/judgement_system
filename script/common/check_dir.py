@@ -13,6 +13,7 @@ def is_random(target_dir):
 def included_full_files(target_dir):
     fd = gtf.file_dic(target_dir)
     return "last_conf" in fd and "input" in fd and "trajectory" in fd
+    # return "last_conf" in fd and "input" in fd
 
 def check_file(file_name):
     file = open(file_name, "r")

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/PolydisperseLTInteraction.pdb"
-  "../../../contrib/rovigatti/PolydisperseLTInteraction.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/PolydisperseLTInteraction.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/PolydisperseLTInteraction.so"
   "CMakeFiles/PolydisperseLTInteraction.dir/src/Interactions/PolydisperseLTInteraction.cpp.o"
   "CMakeFiles/PolydisperseLTInteraction.dir/src/Interactions/PolydisperseLTInteraction.cpp.o.d"
 )

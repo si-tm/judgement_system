@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/Exhaust.dylib"
-  "../../../contrib/romano/Exhaust.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/Exhaust.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/Exhaust.pdb"
   "CMakeFiles/Exhaust.dir/src/Backends/MCMoves/Exhaust.cpp.o"
   "CMakeFiles/Exhaust.dir/src/Backends/MCMoves/Exhaust.cpp.o.d"
 )

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/mWInteraction.pdb"
-  "../../../contrib/rovigatti/mWInteraction.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/mWInteraction.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/mWInteraction.so"
   "CMakeFiles/mWInteraction.dir/src/Interactions/mWInteraction.cpp.o"
   "CMakeFiles/mWInteraction.dir/src/Interactions/mWInteraction.cpp.o.d"
 )

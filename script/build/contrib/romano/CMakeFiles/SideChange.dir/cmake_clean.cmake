@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/SideChange.dylib"
-  "../../../contrib/romano/SideChange.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/SideChange.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/SideChange.pdb"
   "CMakeFiles/SideChange.dir/src/Backends/MCMoves/SideChange.cpp.o"
   "CMakeFiles/SideChange.dir/src/Backends/MCMoves/SideChange.cpp.o.d"
 )

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/AVBDepletion.dylib"
-  "../../../contrib/romano/AVBDepletion.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/AVBDepletion.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/AVBDepletion.pdb"
   "CMakeFiles/AVBDepletion.dir/src/Backends/MCMoves/AVBDepletion.cpp.o"
   "CMakeFiles/AVBDepletion.dir/src/Backends/MCMoves/AVBDepletion.cpp.o.d"
 )

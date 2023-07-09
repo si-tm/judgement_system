@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/MCMovePatchyShape.dylib"
-  "../../../contrib/romano/MCMovePatchyShape.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/MCMovePatchyShape.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/MCMovePatchyShape.pdb"
   "CMakeFiles/MCMovePatchyShape.dir/src/Backends/MCMoves/MCMovePatchyShape.cpp.o"
   "CMakeFiles/MCMovePatchyShape.dir/src/Backends/MCMoves/MCMovePatchyShape.cpp.o.d"
   "CMakeFiles/MCMovePatchyShape.dir/src/Interactions/PatchyShapeInteraction.cpp.o"

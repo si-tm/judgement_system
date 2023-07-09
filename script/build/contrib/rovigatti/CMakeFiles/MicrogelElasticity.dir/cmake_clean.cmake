@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/rovigatti/MicrogelElasticity.pdb"
-  "../../../contrib/rovigatti/MicrogelElasticity.so"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/MicrogelElasticity.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/rovigatti/MicrogelElasticity.so"
   "CMakeFiles/MicrogelElasticity.dir/src/Observables/MicrogelElasticity.cpp.o"
   "CMakeFiles/MicrogelElasticity.dir/src/Observables/MicrogelElasticity.cpp.o.d"
 )

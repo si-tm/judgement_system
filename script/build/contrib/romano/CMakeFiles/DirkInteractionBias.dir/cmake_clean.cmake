@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/DirkInteractionBias.dylib"
-  "../../../contrib/romano/DirkInteractionBias.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/DirkInteractionBias.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/DirkInteractionBias.pdb"
   "CMakeFiles/DirkInteractionBias.dir/src/Interactions/DirkInteractionBias.cpp.o"
   "CMakeFiles/DirkInteractionBias.dir/src/Interactions/DirkInteractionBias.cpp.o.d"
 )

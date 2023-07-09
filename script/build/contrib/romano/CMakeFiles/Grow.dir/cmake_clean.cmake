@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/Grow.dylib"
-  "../../../contrib/romano/Grow.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/Grow.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/Grow.pdb"
   "CMakeFiles/Grow.dir/src/Backends/MCMoves/Grow.cpp.o"
   "CMakeFiles/Grow.dir/src/Backends/MCMoves/Grow.cpp.o.d"
 )

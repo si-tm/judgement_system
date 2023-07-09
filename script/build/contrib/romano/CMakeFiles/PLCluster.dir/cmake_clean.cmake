@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../contrib/romano/PLCluster.dylib"
-  "../../../contrib/romano/PLCluster.pdb"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/PLCluster.dylib"
+  "/Users/hyakuzukamaya/Desktop/lab/judgement_system/script/contrib/romano/PLCluster.pdb"
   "CMakeFiles/PLCluster.dir/src/Interactions/PatchyShapeInteraction.cpp.o"
   "CMakeFiles/PLCluster.dir/src/Interactions/PatchyShapeInteraction.cpp.o.d"
   "CMakeFiles/PLCluster.dir/src/Observables/PLCluster.cpp.o"
