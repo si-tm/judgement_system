@@ -62,8 +62,8 @@ def set_eval(ind, averageModel, deviationModel, scale=10.0):
     strands = [1 if a else 0 for a in indexes]
     # print(strands)
     score = 2*math.atan(averageModel.predict([strands], verbose = 0)[0]/scale)/math.pi
-    fit0 = ind[-1]#deviationModel.predict([strands])[0,0]
-    # fit0 = 2*math.atan(deviationModel.predict([strands], verbose = 0)[0,0]/scale)/math.pi
+    # fit0 = ind[-1]#deviationModel.predict([strands])[0,0]
+    fit0 = 2*math.atan(deviationModel.predict([strands], verbose = 0)[0,0]/scale)/math.pi
     # print(fit0)
     fit1 = np.sum(indexes)
     features = (fit0, fit1)
@@ -101,8 +101,10 @@ def run_qdpy(dirpath="test"):
 
     # Run illumination process !
     #配置を実行する。
-    averageModel = getModel('../../saved_model/l1_ave_230530')
-    deviationModel = getModel('../../saved_model/l1_dev_0605')
+    # averageModel = getModel('../../saved_model/l1_ave_230530')
+    # deviationModel = getModel('../../saved_model/l1_dev_0605')
+    averageModel = getModel(path="../../saved_model/l1_ave_230710")
+    deviationModel = getModel('../../saved_model/l1_dev_230710')
     eval_fn = functools.partial(set_eval,averageModel=averageModel,deviationModel=deviationModel)
     best = algo.optimise(eval_fn)
     print(algo.summary())

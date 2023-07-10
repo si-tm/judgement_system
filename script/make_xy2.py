@@ -186,10 +186,45 @@ def test():
     print(load_npy("../data/npy/y_random_l1_6_rb.npy"))
     print(load_npy("../data/npy/y_random_l1_6_dv.npy"))
 
+def fromQD():
+    dirs = lr.load_fromQD_dir("../input/results/fromQD/r20230613134109/")
+    # data/dic/L1_data_fromQD_1.pkl
+    dic_x = gx.load_x("../data/dic/x_fromQD_l1_1.pkl")
+    dic_y = gy.load_y("../data/dic/L1_data_fromQD_1.pkl")
+    print(dic_x)
+    print(dic_y)
+    seq_csv_path = "../input/input_seq_L1.csv"
+    x_lst = mis.seq_lst(seq_csv_path)
+
+    x = []
+    y = []
+    y_dv = []
+
+    print(len(dic_x))
+    print(len(dic_y))
+
+    for d in dirs:
+        print(d)
+        x.append(dic2lst(dic_x[d + "/"], x_lst))
+        y.append(dic_y[d]["mean_volume"])
+        y_dv.append(dic_y[d]["deviation_of_volume"])
+    
+    print(x)
+    print(y)
+    print(y_dv)
+    
+    target_name = "fromQD_l1_1"
+
+    np.save("../data/npy/x_" + target_name,x)
+    np.save("../data/npy/y_" + target_name + "_mean.npy",y)
+    np.save("../data/npy/y_" + target_name + "_dv.npy",y_dv)
+
+
 def main():
     pass
 
 if __name__ == '__main__':
     # main()
-    test()
+    # test()
+    fromQD()
     

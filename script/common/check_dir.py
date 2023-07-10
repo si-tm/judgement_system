@@ -10,6 +10,12 @@ def is_random(target_dir):
     else:
         return False
 
+def is_fromQD(target_dir):
+    if "fromQD" in target_dir:
+        return True
+    else:
+        return False
+
 def included_full_files(target_dir):
     fd = gtf.file_dic(target_dir)
     return "last_conf" in fd and "input" in fd and "trajectory" in fd

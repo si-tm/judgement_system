@@ -80,14 +80,26 @@ trajectory_trap_r20230613134109.dat
     
 # done
 
+# for l in ${lst[@]}
+# do
+#     for f in ${files[@]}
+#     do
+#         before_filename=r${l}/${f}
+#         echo $before_filename
+#         after_filename=`echo ${before_filename//r20230613134109/r${l}}`
+#         echo $after_filename
+#         mv $before_filename $after_filename
+#     done
+# done
+
+# for l in ${lst[@]}
+# do
+#     # input/results/fromQD/r20230613134109/seq_r1686027508463-639
+#     cp seq_r${l} r${l}/
+# done
+
+# cp script/optimize_tutorial/r20230613134109/req_1686027494794-20.txt r1686027494794-20/req_1686027494794-20.txt
 for l in ${lst[@]}
 do
-    for f in ${files[@]}
-    do
-        before_filename=r${l}/${f}
-        echo $before_filename
-        after_filename=`echo ${before_filename//r20230613134109/r${l}}`
-        echo $after_filename
-        mv $before_filename $after_filename
-    done
+    cp ../../../../script/optimize_tutorial/r20230613134109/req_${l}.txt r${l}/req_r${l}.txt
 done

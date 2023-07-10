@@ -107,6 +107,18 @@ def load_random_dir(target_dir, type_of_l):
 
     return right_dir
 
+def load_fromQD_dir(path):
+    # ../input/results/fromQD/r20230613134109/*/
+    folder = glob.glob(path + "*/")
+
+    right_dir = []
+    for f in folder:
+        
+        if cd.included_full_files(f) == True:
+            right_dir.append(f)
+
+    return right_dir
+
 def load_diffseq_dir(path="../input/results/oxdna_random_6_diffseq/L1"):
     # input/results/oxdna_random_6_diffseq/L1/d-0-1/L1_d-0-1_2023-01-30-152202/L1_d-0-1_2023-01-30-152202/energy_L1_d-0-1_2023-01-30-152202.dat
     folder = glob.glob(path + "/*/*/*/")
@@ -120,6 +132,17 @@ def load_diffseq_dir(path="../input/results/oxdna_random_6_diffseq/L1"):
 
     return right_dir
 
+def load_fromQD_dir(path="../input/results/fromQD/r20230613134109"):
+    folder = glob.glob(path + "/*")
+
+    right_dir = []
+    for f in folder:
+        fd = gtf.file_dic(f).keys()
+        if "last_conf" in fd and "input" in fd:
+            if cd.included_full_files(f) == True:
+                right_dir.append(f)
+
+    return right_dir
 
 def main():
     # dirs = load_directory()

@@ -116,6 +116,7 @@ def get_top(dir_path):
 
 def get_seq(dir_path):
     d = file_dic(dir_path)
+    # print(d.keys())
     # print(d["seq"])
     return d["seq"]
 

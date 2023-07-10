@@ -43,7 +43,7 @@ def make_data(path, type_of_l, version=4):
 
 def make_data_fromQD(path, type_of_l, version=4):
     # input/results/fromQD/r20230613134109/r1686027494794-20/*
-    dirs = glob.glob(path + "*")
+    dirs = glob.glob(path + "*/")
     dic = {}
     for index, d in enumerate(dirs):
         print(datetime.datetime.now(), " : ", index + 1, "/", len(dirs))
