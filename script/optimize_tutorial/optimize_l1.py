@@ -87,7 +87,7 @@ def run_qdpy(dirpath="test"):
     #??
     algo = algorithms.RandomSearchMutPolyBounded(
         grid, 
-        budget=1000, 
+        budget=1000000, 
         # budget=1000, 
         batch_size=100,
         dimension=17, #1つのストランドセットに幾つパラメータがあるか # one bit per strand
