@@ -43,7 +43,7 @@ def set_eval(ind, averageModel, deviationModel, scale=10.0):
     
     indexes = np.array(ind[:-1]) > ind[-1]
     strands = [1 if a else 0 for a in indexes]
-    score = 2*math.atan(averageModel.predict([strands], verbose = 0)[0]/scale)/math.pi
+    score = 2*math.atan(averageModel.predict([strands], verbose = 0)[0][0]/scale)/math.pi
     # fit0 = ind[-1]#deviationModel.predict([strands])[0,0]
     fit0 = 2*math.atan(deviationModel.predict([strands], verbose = 0)[0,0]/scale)/math.pi
     fit1 = np.sum(indexes)
@@ -52,7 +52,7 @@ def set_eval(ind, averageModel, deviationModel, scale=10.0):
     return (score,), features
 
 
-def run_qdpy(dirpath="test"):
+def run_qdpy(dirpath="test", full_budget=1000000):
     # Create container and algorithm. Here we use MAP-Elites, by illuminating a Grid container by evolution.
     
     #評価結果を配置するgridを作成。
@@ -65,35 +65,35 @@ def run_qdpy(dirpath="test"):
         features_domain=((0., 1.), (1, 256))) #軸 deviation, number of strands 
         # features_domain=((0., 1.), (3, 6))) #軸 deviation, number of strands 
     
-    #配置アルゴリズムを指定。今回はエネルギーが小さいほど高評価なので、minimization。
-    #??
-    algo = algorithms.RandomSearchMutPolyBounded(
-        grid, 
-        budget=1000000, 
-        # budget=1000, 
-        batch_size=100,
-        # dimension=17, #1つのストランドセットに幾つパラメータがあるか # one bit per strand
-        dimension=257, #1つのストランドセットに幾つパラメータがあるか # one bit per strand
-        optimisation_task="maximization")
-    
-    # Create a logger to pretty-print everything and generate output data files
-    #すべてをプリティプリントするロガーを作成し、出力データファイルを生成する。
-    #配置されたデータはpickleファイルから全て取得可能。
-    logger = algorithms.AlgorithmLogger(algo)
-
-    # Run illumination process !
-    #配置を実行する。
     averageModel = getModel('../../saved_model/l2_ave_230613')
     deviationModel = getModel('../../saved_model/l2_dev_230613')
     eval_fn = functools.partial(set_eval,averageModel=averageModel,deviationModel=deviationModel)
-    best = algo.optimise(eval_fn)
+
+    for iteration in range(full_budget//1000):
+
+        #配置アルゴリズムを指定。今回はエネルギーが小さいほど高評価なので、minimization。
+        #??
+        algo = algorithms.RandomSearchMutPolyBounded(
+            grid, 
+            budget=1000, 
+            batch_size=100,
+            # dimension=17, #1つのストランドセットに幾つパラメータがあるか # one bit per strand
+            dimension=257, #1つのストランドセットに幾つパラメータがあるか # one bit per strand
+            optimisation_task="maximization")
+        
+        # Create a logger to pretty-print everything and generate output data files
+        #すべてをプリティプリントするロガーを作成し、出力データファイルを生成する。
+        #配置されたデータはpickleファイルから全て取得可能。
+        logger = algorithms.AlgorithmLogger(algo)
+        logger.final_filename = dirpath + f"/qdpy_log_l2_2306133_{iteration}.p"
+        print(logger.final_filename)
+
+        # Run illumination process !
+        #配置を実行する。
+        best = algo.optimise(eval_fn)
     print(algo.summary())
-    #print(type(algo))
-    #print("wow")
     
     # Plot the results
-    logger.final_filename = dirpath + "/qdpy_log_l1_230613.p"
-    print(logger.final_filename)
     plots.default_plots_grid(logger)
     print("All results are available in the '%s' pickle file." % logger.final_filename)
 

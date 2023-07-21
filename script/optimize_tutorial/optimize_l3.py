@@ -71,7 +71,7 @@ def set_eval(ind, averageModel, deviationModel, scale=40.0):
     return (score,), features
 
 
-def run_qdpy(dirpath="test"):
+def run_qdpy(dirpath="test", full_budget=1000000):
     # Create container and algorithm. Here we use MAP-Elites, by illuminating a Grid container by evolution.
     
     #評価結果を配置するgridを作成。
@@ -87,35 +87,38 @@ def run_qdpy(dirpath="test"):
     
     #配置アルゴリズムを指定。今回はエネルギーが小さいほど高評価なので、minimization。
     #??
-    algo = algorithms.RandomSearchMutPolyBounded(
-        grid, 
-        budget=1000000, 
-        # budget=1000, 
-        batch_size=100,
-        # dimension=17, #1つのストランドセットに幾つパラメータがあるか # one bit per strand
-        # dimension=257, #1つのストランドセットに幾つパラメータがあるか # one bit per strand
-        dimension=1729, #1つのストランドセットに幾つパラメータがあるか # one bit per strand
-        optimisation_task="maximization")
-    
-    # Create a logger to pretty-print everything and generate output data files
-    #すべてをプリティプリントするロガーを作成し、出力データファイルを生成する。
-    #配置されたデータはpickleファイルから全て取得可能。
-    logger = algorithms.AlgorithmLogger(algo)
-
     # Run illumination process !
     #配置を実行する。
     averageModel = getModel('../../saved_model/l3_ave_230613')
     # deviationModel = getModel('../../saved_model/l3_dev_230613')
     deviationModel = getGBR()
     eval_fn = functools.partial(set_eval,averageModel=averageModel,deviationModel=deviationModel)
-    best = algo.optimise(eval_fn)
+
+    for iteration in range(full_budget//1000):
+        algo = algorithms.RandomSearchMutPolyBounded(
+            grid, 
+            budget=1000, 
+            # budget=1000, 
+            batch_size=100,
+            # dimension=17, #1つのストランドセットに幾つパラメータがあるか # one bit per strand
+            # dimension=257, #1つのストランドセットに幾つパラメータがあるか # one bit per strand
+            dimension=1729, #1つのストランドセットに幾つパラメータがあるか # one bit per strand
+            optimisation_task="maximization")
+        
+        # Create a logger to pretty-print everything and generate output data files
+        #すべてをプリティプリントするロガーを作成し、出力データファイルを生成する。
+        #配置されたデータはpickleファイルから全て取得可能。
+        logger = algorithms.AlgorithmLogger(algo)
+        logger.final_filename = dirpath + f"/qdpy_log_l3_230613_{iteration}.p"
+        print(logger.final_filename)
+
+        best = algo.optimise(eval_fn)
     print(algo.summary())
     #print(type(algo))
     #print("wow")
     
     # Plot the results
-    logger.final_filename = dirpath + "/qdpy_log_l1_230613.p"
-    print(logger.final_filename)
+    
     plots.default_plots_grid(logger)
     print("All results are available in the '%s' pickle file." % logger.final_filename)
 
