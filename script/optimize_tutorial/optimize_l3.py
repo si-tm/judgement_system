@@ -30,7 +30,7 @@ from datetime import datetime
 import numpy as np
 from sklearn.preprocessing import Normalizer
 from sklearn.ensemble import GradientBoostingRegressor
-
+import gc
 
 import functools
 
@@ -61,12 +61,13 @@ def set_eval(ind, averageModel, deviationModel, scale=40.0):
     
     indexes = np.array(ind[:-1]) > ind[-1]
     strands = [1 if a else 0 for a in indexes]
-    score = 2*math.atan(averageModel.predict([strands], verbose = 0)[0]/scale)/math.pi
+    score = 2*math.atan(averageModel.predict([strands], verbose = 0)[0][0]/scale)/math.pi
     # fit0 = ind[-1]#deviationModel.predict([strands])[0,0]
     # fit0 = 2*math.atan(deviationModel.predict([strands], verbose = 0)[0,0]/scale)/math.pi # this neural network
     fit0 = 2*math.atan(deviationModel.predict([strands])[0]/scale)/math.pi # this GradientBoostingRegressor
     fit1 = np.sum(indexes)
     features = (fit0, fit1)
+    gc.collect()
     return (score,), features
 
 

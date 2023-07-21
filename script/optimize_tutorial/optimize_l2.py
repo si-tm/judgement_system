@@ -29,7 +29,7 @@ from sklearn.model_selection import train_test_split
 from datetime import datetime
 import numpy as np
 from sklearn.preprocessing import Normalizer
-
+import gc
 import functools
 
 
@@ -48,6 +48,7 @@ def set_eval(ind, averageModel, deviationModel, scale=10.0):
     fit0 = 2*math.atan(deviationModel.predict([strands], verbose = 0)[0,0]/scale)/math.pi
     fit1 = np.sum(indexes)
     features = (fit0, fit1)
+    gc.collect()
     return (score,), features
 
 
