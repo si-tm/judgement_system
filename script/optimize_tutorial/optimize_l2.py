@@ -69,13 +69,13 @@ def run_qdpy(dirpath="test", full_budget=1000000):
     deviationModel = getModel('../../saved_model/l2_dev_230613')
     eval_fn = functools.partial(set_eval,averageModel=averageModel,deviationModel=deviationModel)
 
-    for iteration in range(full_budget//1000):
+    for iteration in range(full_budget//100):
 
         #配置アルゴリズムを指定。今回はエネルギーが小さいほど高評価なので、minimization。
         #??
         algo = algorithms.RandomSearchMutPolyBounded(
             grid, 
-            budget=1000, 
+            budget=100, 
             batch_size=100,
             # dimension=17, #1つのストランドセットに幾つパラメータがあるか # one bit per strand
             dimension=257, #1つのストランドセットに幾つパラメータがあるか # one bit per strand
@@ -112,9 +112,9 @@ def getXY():
 
 def main():
     run_qdpy()
-    x_data, y_data = getXY()
+    # x_data, y_data = getXY()
     # 256
-    print(len(x_data[0]))
+    # print(len(x_data[0]))
 
 
     

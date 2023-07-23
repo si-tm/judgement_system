@@ -94,10 +94,10 @@ def run_qdpy(dirpath="test", full_budget=1000000):
     deviationModel = getGBR()
     eval_fn = functools.partial(set_eval,averageModel=averageModel,deviationModel=deviationModel)
 
-    for iteration in range(full_budget//1000):
+    for iteration in range(full_budget//100):
         algo = algorithms.RandomSearchMutPolyBounded(
             grid, 
-            budget=1000, 
+            budget=100, 
             # budget=1000, 
             batch_size=100,
             # dimension=17, #1つのストランドセットに幾つパラメータがあるか # one bit per strand
@@ -136,7 +136,7 @@ def getXY():
 
 
 def main():
-    run_qdpy()
+    run_qdpy(full_budget=500000)
     # x_data, y_data = getXY()
     # 1728
     # print(len(x_data[0]))

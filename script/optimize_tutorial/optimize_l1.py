@@ -131,7 +131,7 @@ def main():
 
     # x_data = np.load(x_l1_mean_path)
 
-    run_qdpy()
+    run_qdpy(full_budget=500000)
     
 
 if __name__ == "__main__":
