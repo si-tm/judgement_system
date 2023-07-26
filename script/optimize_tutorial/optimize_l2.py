@@ -111,7 +111,7 @@ def getXY():
 
 
 def main():
-    run_qdpy()
+    run_qdpy(full_budget=30000)
     # x_data, y_data = getXY()
     # 256
     # print(len(x_data[0]))

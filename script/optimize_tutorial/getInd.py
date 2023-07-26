@@ -2,13 +2,14 @@ import pickle
 import numpy as np
 import csv
 import os
+import glob
 
 # final.pからスコアの高いindを取り出す
 
 def make_req(type_of_l, filename, lst):
     temp_f = open("../../input/template_seq/requirement_" + type_of_l + ".txt", "r")
-    os.mkdir("r20230711010730/r" + filename )
-    new_f = open("r20230711010730/r" + filename + "/req_r" + filename + ".txt", "w") # ここ変える
+    os.mkdir("r20230724060622/r" + filename ) # ここ変える
+    new_f = open("r20230724060622/r" + filename + "/req_r" + filename + ".txt", "w") # ここ変える
     tmp_theme = ""
     for temp_l in temp_f:
         if temp_l[0] == '#':
@@ -67,18 +68,26 @@ def readFinal(path, type_of_l):
             comp = Ind2complexes(lst, type_of_l)
             comp = req(comp)
             print(comp)
-            make_req(type_of_l="L3", filename=ind.name, lst=comp) # ここ変える
+            # make_req(type_of_l="L3", filename=ind.name, lst=comp) # ここ変える
 
             # print(ind.fitness)
             # print(ind.features)
+
+def readFinals(path, type_of_l):
+    # script/optimize_tutorial/results/optimizationresults_20230724060622/final
+    finals = glob.glob(path + "final/*")
+    for final in finals:
+        readFinal(final, "L3")
 
 def test():
     path="results/optimizationresults_20230710153049/final.p" # ここ変える
     readFinal(path, "L1") # ここ変える
 
 def test_l3():
-    path="results/optimizationresults_20230711010730/final.p" # ここ変える
-    readFinal(path, "L3") # ここ変える
+    # path="results/optimizationresults_20230724060622/final.p" # ここ変える
+    # readFinal(path, "L3") # ここ変える
+    path="results/optimizationresults_20230724060622/" # ここ変える
+    readFinals(path, "L3") # ここ変える
 
 
 if __name__ == '__main__':

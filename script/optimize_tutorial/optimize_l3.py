@@ -55,11 +55,12 @@ def getModel(path="../../saved_model/l1_ave_230530"):
     return model
 
 
-def set_eval(ind, averageModel, deviationModel, scale=40.0):
+def set_eval(ind, averageModel, deviationModel, scale=40.0, th = 0.8):
     # X, Y = getXY()
     # print(len(ind))
     
-    indexes = np.array(ind[:-1]) > ind[-1]
+    # indexes = np.array(ind[:-1]) > ind[-1]
+    indexes = np.array(ind[:-1]) > th
     strands = [1 if a else 0 for a in indexes]
     score = 2*math.atan(averageModel.predict([strands], verbose = 0)[0][0]/scale)/math.pi
     # fit0 = ind[-1]#deviationModel.predict([strands])[0,0]
@@ -136,7 +137,7 @@ def getXY():
 
 
 def main():
-    run_qdpy(full_budget=500000)
+    run_qdpy(full_budget=30000)
     # x_data, y_data = getXY()
     # 1728
     # print(len(x_data[0]))
