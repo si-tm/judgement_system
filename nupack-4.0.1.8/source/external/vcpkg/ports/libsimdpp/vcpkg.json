@@ -1,0 +1,6 @@
+{
+  "name": "libsimdpp",
+  "version": "2.1",
+  "description": "A portable header-only zero-overhead C++ low level SIMD library",
+  "homepage": "https://github.com/p12tic/libsimdpp"
+}

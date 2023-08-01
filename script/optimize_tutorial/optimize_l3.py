@@ -59,8 +59,8 @@ def set_eval(ind, averageModel, deviationModel, scale=40.0, th = 0.8):
     # X, Y = getXY()
     # print(len(ind))
     
-    # indexes = np.array(ind[:-1]) > ind[-1]
-    indexes = np.array(ind[:-1]) > th
+    indexes = np.array(ind[:-1]) > ind[-1]
+    # indexes = np.array(ind[:-1]) > th
     strands = [1 if a else 0 for a in indexes]
     score = 2*math.atan(averageModel.predict([strands], verbose = 0)[0][0]/scale)/math.pi
     # fit0 = ind[-1]#deviationModel.predict([strands])[0,0]
@@ -104,6 +104,7 @@ def run_qdpy(dirpath="test", full_budget=1000000):
             # dimension=17, #1つのストランドセットに幾つパラメータがあるか # one bit per strand
             # dimension=257, #1つのストランドセットに幾つパラメータがあるか # one bit per strand
             dimension=1729, #1つのストランドセットに幾つパラメータがあるか # one bit per strand
+            # dimension=10, #1つのストランドセットに幾つパラメータがあるか # one bit per strand # 変えた
             optimisation_task="maximization")
         
         # Create a logger to pretty-print everything and generate output data files

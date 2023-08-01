@@ -61,6 +61,7 @@ def set_eval(ind, averageModel, deviationModel, scale=10.0):
     indexes = np.array(ind[:-1]) > ind[-1]
     # print(indexes)
     strands = [1 if a else 0 for a in indexes]
+    print(strands)
     # print(strands)
     score = 2*math.atan(averageModel.predict([strands], verbose = 0)[0][0]/scale)/math.pi
     # fit0 = ind[-1]#deviationModel.predict([strands])[0,0]
@@ -69,6 +70,7 @@ def set_eval(ind, averageModel, deviationModel, scale=10.0):
     fit1 = np.sum(indexes)
     features = (fit0, fit1)
     gc.collect()
+    print((score,), features)
     return (score,), features
 
 
