@@ -1,5 +1,0 @@
-tap "homebrew/bundle"
-tap "homebrew/core"
-brew "awscli"
-brew "php"
-brew "pyenv"
